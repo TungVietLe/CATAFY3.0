@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Simple tool to create online store in less than 3 minutes
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
