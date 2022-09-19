@@ -1,0 +1,94 @@
+$background-primary: #111315;
+$background-secondary: #1A1D1F;
+$background-tertiary: #272B30;
+$text-primary: #FFFFFF;
+$text-secondary: #D0D6DC;
+$text-tertiary: #AAB1B8;
+$purple: #763cfe;
+$red: #F34A30;
+$blue: #2A86FF;
+$orange: #DEB224;
+$green: #83BF6E;
+
+
+* {
+  margin: 0%; padding: 0%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* color: $text-primary;
+  background-color: $background-primary; */
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $background-tertiary;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $purple;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $text-tertiary;
+}
+
+
+
+
+
+a {
+  color: $purple;
+  text-decoration: none;
+}
+
+
+
+
+input{
+  display: block;
+  width: 50vw;
+  padding: 0.3rem 1rem; margin: 1rem;
+  border-radius: 0.5rem;
+  border: $background-tertiary 2px solid;
+  transition: ease 0.5s;
+}
+input:focus{
+  border: $blue 2px solid;
+  outline: none;
+}
+
+
+
+
+
+
+
+button {
+  border: none;
+  color: $text-primary;
+  background-color: $purple;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.3rem;
+  font-weight: 500;
+  transition: ease 0.3s;
+  cursor: pointer;
+}
+button:hover{
+  opacity: 0.8;
+}
+button:disabled {
+  color: $text-tertiary;
+}
+
+
