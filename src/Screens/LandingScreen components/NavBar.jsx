@@ -8,6 +8,7 @@ function NavBar() {
         <Link to={'/pricing'}>Pricing</Link>
         <Link to={'/career'}>Career</Link>
         <Link to={'/about'}>About</Link>
+        <Link to={'/console'}>{'> Console'}</Link>
     </div>
   )
 }
