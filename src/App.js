@@ -1,6 +1,10 @@
 import React, { useEffect, useState, createContext } from "react";
 import './App.scss';
-import {BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {Routes, Route, Link } from "react-router-dom";
+
+//firebase
+import {auth} from './firebase/config'
+import {onAuthStateChanged} from 'firebase/auth'
 
 //routes
 import ConsoleRoutes from "./Routes/ConsoleRoutes";
@@ -12,10 +16,15 @@ import PricingPage from "./Screens/LandingScreen components/PricingPage";
 
 
 function App() {
-  const user = true
+  const [user, setUser] = useState(null)
+  useEffect(()=>{
+    onAuthStateChanged(auth, (data)=>{
+      console.count('Auth Rendered')
+      setUser(data)
+    })
+  }, [])
   
   return (
-    <Router>
         <Routes>
           <Route path="/" element={<LandingScreen/>}/>
           <Route path="/pricing" element={<PricingPage/>}/>
@@ -27,7 +36,6 @@ function App() {
           <Route path="/:storeidURL/admin/*" element={<AdminRoutes/>}/>
           <Route path="*" element={<div>Not found</div>}/>
         </Routes>
-      </Router>
   );
 }
 
