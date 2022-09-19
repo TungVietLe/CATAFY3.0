@@ -15,6 +15,9 @@ import LandingScreen from "./Screens/LandingScreen";
 import PricingPage from "./Screens/LandingScreen components/PricingPage";
 
 
+
+export const UserContext = createContext()
+
 function App() {
   const [user, setUser] = useState(null)
   useEffect(()=>{
@@ -25,17 +28,19 @@ function App() {
   }, [])
   
   return (
-        <Routes>
-          <Route path="/" element={<LandingScreen/>}/>
-          <Route path="/pricing" element={<PricingPage/>}/>
-          <Route path="/about" element={<div>about</div>}/>
-          <Route path="/careers" element={<div>career</div>}/>
+    <UserContext.Provider value={user}>
+      <Routes>
+        <Route path="/" element={<LandingScreen/>}/>
+        <Route path="/pricing" element={<PricingPage/>}/>
+        <Route path="/about" element={<div>about</div>}/>
+        <Route path="/careers" element={<div>career</div>}/>
 
-          <Route path="/console/*" element={user? <ConsoleRoutes/> : <div>Login</div>}/>
-          <Route path="/:storeidURL/*" element={<StoreRoutes/>}/>
-          <Route path="/:storeidURL/admin/*" element={<AdminRoutes/>}/>
-          <Route path="*" element={<div>Not found</div>}/>
-        </Routes>
+        <Route path="/console/*" element={user? <ConsoleRoutes/> : <div>Login</div>}/>
+        <Route path="/:storeidURL/*" element={<StoreRoutes/>}/>
+        <Route path="/:storeidURL/admin/*" element={<AdminRoutes/>}/>
+        <Route path="*" element={<div>Not found</div>}/>
+      </Routes>
+    </UserContext.Provider>
   );
 }
 
