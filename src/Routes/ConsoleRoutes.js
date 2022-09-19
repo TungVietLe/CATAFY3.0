@@ -1,6 +1,11 @@
 import React from 'react'
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
+//screens
+import ConsoleIndex from '../Screens/Console/ConsoleIndex';
+import NewStorePage from '../Screens/Console/Components/NewStorePage';
+
+
 function ConsoleRoutes() {
   return (
     <>
@@ -10,9 +15,9 @@ function ConsoleRoutes() {
             <Link to={'new'}>New</Link>
         </div>
         <Routes>
-          <Route index element={<div>Console index</div>}/>
-          <Route path="new" element={<div>new store</div>}/>
-          <Route path="learn" element={<div>Learn feature</div>}/>
+          <Route index element={<ConsoleIndex/>}/>
+          <Route path="new" element={<NewStorePage/>}/>
+          <Route path="learn" element={<div>Learn feature soon!</div>}/>
         </Routes>
     </>
   )
