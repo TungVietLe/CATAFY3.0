@@ -1,20 +1,24 @@
 import React, { useContext, useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 //context
 import {UserContext} from '../../../App'
 //hooks
-import {handleCreateStore} from '../../../Hooks/Create/handleCreateStore'
+import {handleCreateProduct} from '../../../Hooks/Create/handleCreateProduct'
 
 function ProductNew() {
-    //context
-    const user = useContext(UserContext); const userid = user?.uid
-    const navigateTo = useNavigate()
-    
+  const navigateTo = useNavigate()
+  //context
+  const user = useContext(UserContext); const userid = user?.uid
+  //params
+  const {storeidURL} = useParams()
+  
 
-    //
-    const [productName, setProductName] = useState()
-    const [productPrice, setProductPrice] = useState()
-    const [productImg, setProductImg] = useState()
+  
+
+  //
+  const [productName, setProductName] = useState()
+  const [productPrice, setProductPrice] = useState()
+  const [productImg, setProductImg] = useState()
 
 
 
@@ -30,7 +34,8 @@ function ProductNew() {
         {/* _____ INPUTS _____ */}
 
         <button onClick={()=>{
-            
+          handleCreateProduct(storeidURL, productName, productPrice, productImg)
+          .then((mes)=>{console.log(mes)})
         }}>Save</button>
     </>
   )
