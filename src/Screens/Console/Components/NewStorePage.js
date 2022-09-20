@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 //context
 import {UserContext} from '../../../App'
 //hooks
-import {handleCreateStore} from '../../../Hooks/Create/HandleCreateStore'
+import {handleCreateStore} from '../../../Hooks/Create/handleCreateStore'
 
 function NewStorePage() {
     //
