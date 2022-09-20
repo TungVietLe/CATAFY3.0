@@ -9,7 +9,6 @@ function useReadEntireCollection() {
 
   const handleReadCollection = async(targetCollection) => {
     setItemArray([])
-    setArrayWithID([])
     const querySnapshot = await getDocs(targetCollection)
     querySnapshot.forEach((item)=>{
       setItemArray((prev)=> [...prev, item] )

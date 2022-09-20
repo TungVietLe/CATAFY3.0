@@ -11,6 +11,7 @@ function ProductNew() {
   const user = useContext(UserContext); const userid = user?.uid
   //params
   const {storeidURL} = useParams()
+  //hooks
   
 
   
