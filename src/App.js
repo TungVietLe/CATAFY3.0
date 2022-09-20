@@ -33,7 +33,7 @@ function App() {
         <Route path="/" element={<LandingScreen/>}/>
         <Route path="/pricing" element={<PricingPage/>}/>
         <Route path="/about" element={<div>about</div>}/>
-        <Route path="/careers" element={<div>career</div>}/>
+        <Route path="/career" element={<div>career</div>}/>
 
         <Route path="/console/*" element={user? <ConsoleRoutes/> : <div>Login</div>}/>
         <Route path="/:storeidURL/*" element={<StoreRoutes/>}/>

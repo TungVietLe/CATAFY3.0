@@ -19,7 +19,11 @@ function NewStorePage() {
   return (
     <>
         <h2>New Store</h2>
+        {/* _____ INPUTS _____ */}
+        <input placeHolder='name' onChange={(e)=>{setStoreName(e.target.value)}}/>
+        <input placeHolder='store id' onChange={(e)=>{setstoreid(e.target.value)}}/>
         <input type={'file'} onChange={(e)=>{setLogo(e.target.files[0])}}/>
+        {/* _____ INPUTS _____ */}
         <button onClick={()=>{
             HandleCreateStore('booleke', 'bbbb', 'testname', logo)
             .then(()=>{navigateTo('/console')})
