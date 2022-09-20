@@ -13,8 +13,8 @@ const firebaseConfig = {
   projectId: "catafy-26ec0",
   storageBucket: "catafy-26ec0.appspot.com",
   messagingSenderId: "803415703477",
-  appId: "1:803415703477:web:92cce6cb444082ba0ca3fc",
-  measurementId: "G-BKJFFBPM0V"
+  appId: "1:803415703477:web:0e675c078df7b6070ca3fc",
+  measurementId: "G-YBKV95K061"
 };
 
 const app = initializeApp(firebaseConfig);

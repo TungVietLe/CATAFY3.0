@@ -11,8 +11,8 @@ import ConsoleRoutes from "./Routes/ConsoleRoutes";
 import StoreRoutes from './Routes/StoreRoutes'
 import AdminRoutes from "./Routes/AdminRoutes";
 //Screens
-import LandingScreen from "./Screens/LandingScreen";
-import PricingPage from "./Screens/LandingScreen components/PricingPage";
+import LandingScreen from "./Screens/Landing/LandingScreen";
+import PricingPage from "./Screens/Landing/Components/PricingPage";
 
 
 
