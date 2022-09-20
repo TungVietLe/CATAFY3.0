@@ -1,10 +1,39 @@
-import React from 'react'
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import React, { useContext, useState } from 'react'
+import {BrowserRouter as Router, Routes, Route, Link, useParams} from "react-router-dom";
+import {UserContext} from '../App'
+
 import ProductRoutes from './AdminRoutes/ProductRoutes';
+
+//firebase
+import { doc } from 'firebase/firestore';
+import {db} from '../firebase/config'
+//hooks
+import {useReadOneDoc} from '../Hooks/FetchData/useReadOneDoc'
 
 
 function AdminRoutes() {
-    const userIsOwner = true
+    const {storeidURL} = useParams()
+    const user = useContext(UserContext); const userid = user?.uid
+
+    //hooks
+    const {handleReadOneDoc, resultDoc} = useReadOneDoc()
+
+
+
+    
+    //
+    const [userIsOwner, setUserIsOwner] = useState(false)
+    const checkOwner = () => {
+        handleReadOneDoc(doc(db, 'store collection', storeidURL))
+        if (resultDoc?.ownerID == userid) { setUserIsOwner(true) }
+        else {setUserIsOwner(false)}
+    }
+
+
+
+
+
+
   return (
     <>
         {userIsOwner? <>
