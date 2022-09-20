@@ -7,7 +7,7 @@ import {ref, uploadBytes, getDownloadURL} from 'firebase/storage'
 
 
 
-function HandleCreateStore(owner, storeid, name, logoFile) {
+function handleCreateStore(owner, storeid, name, logoFile) {
     return new Promise((resolve, reject)=>{
         const logoRef = ref(storage, `stores/${storeid}/storeConfig/logo`)
         uploadBytes(logoRef, logoFile)
@@ -36,4 +36,4 @@ function HandleCreateStore(owner, storeid, name, logoFile) {
     
 }
 
-export {HandleCreateStore}
+export {handleCreateStore}

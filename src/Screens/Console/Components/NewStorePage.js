@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 //context
 import {UserContext} from '../../../App'
 //hooks
-import {HandleCreateStore} from '../../../Hooks/Create/HandleCreateStore'
+import {handleCreateStore} from '../../../Hooks/Create/HandleCreateStore'
 
 function NewStorePage() {
     //
@@ -31,7 +31,7 @@ function NewStorePage() {
         {/* _____ INPUTS _____ */}
 
         <button onClick={()=>{
-            HandleCreateStore(userid, storeid, storeName, logo)
+            handleCreateStore(userid, storeid, storeName, logo)
             .then(()=>{navigateTo('/console')})
         }}>Test Do not click without carefull investigation</button>
     </>
