@@ -1,7 +1,7 @@
 import React from 'react'
 
 //components
-import NavBar from './LandingScreen components/NavBar'
+import NavBar from './Components/NavBar'
 
 function LandingScreen() {
   return (
