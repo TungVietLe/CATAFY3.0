@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {BrowserRouter as Router, Routes, Route, Link, useParams} from "react-router-dom";
 import {UserContext} from '../App'
 
@@ -12,22 +12,20 @@ import {useReadOneDoc} from '../Hooks/FetchData/useReadOneDoc'
 
 
 function AdminRoutes() {
+    //params
     const {storeidURL} = useParams()
-    const user = useContext(UserContext); const userid = user?.uid
-
+    //context
+    const user = useContext(UserContext)
+    const userid = user?.uid
     //hooks
     const {handleReadOneDoc, resultDoc} = useReadOneDoc()
 
-
-
-    
     //
-    const [userIsOwner, setUserIsOwner] = useState(false)
-    const checkOwner = () => {
+    useEffect(()=>{
         handleReadOneDoc(doc(db, 'store collection', storeidURL))
-        if (resultDoc?.ownerID == userid) { setUserIsOwner(true) }
-        else {setUserIsOwner(false)}
-    }
+    }, [])
+    const storeOwnerid = resultDoc?.data().ownerID
+    const userIsOwner = user && resultDoc && storeOwnerid == userid // user exist and store exist and storeownerid = userid
 
 
 
