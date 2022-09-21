@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {useParams} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 //hooks
 import {handleAddItemToLocalCart} from '../../Hooks/localStorage/handleAddToLocalCart'
 
@@ -22,6 +22,7 @@ function Cart() {
         <h2>Your Cart</h2>
         <button onClick={()=>{refreshCart()}}>refresh</button>
         <button onClick={()=>{localStorage.removeItem(storeidURL)}}>Clear</button>
+        {cart && <Link to={'checkout'}>Place order</Link>} {/* only available when cart has item inside */}
 
 
 
@@ -39,6 +40,7 @@ function Cart() {
             </div>
         })}
         {/* CART ITEMS LIST */}
+
     </>
   )
 }
