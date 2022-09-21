@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
-//routes
-import AdminRoutes from './AdminRoutes';
+//pages
+import StoreIndex from '../Screens/Store/StoreIndex';
 
 function ConsoleRoutes() {
   return (
@@ -12,7 +12,7 @@ function ConsoleRoutes() {
             <Link to={'admin'}>admin</Link>
         </div>
         <Routes>
-          <Route index element={<div>Store index</div>}/>
+          <Route index element={<StoreIndex/>}/>
           <Route path="cart" element={<div>cart page</div>}/>
         </Routes>
     </>
