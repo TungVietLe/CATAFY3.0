@@ -34,9 +34,11 @@ function ProductIndex() {
 
         {/* _____ PRODUCT LIST _____ */}
         {resultArray.map((item)=>{
+          const itemData = item.data()
+
           return <div key={item.id}>
-            <img src={item.data().productImageLink} width='100'/>
-            <h3>{item.data().productName}</h3>
+            <img src={itemData.productImageLink} width='100'/>
+            <h3>{itemData.productName}</h3>
           </div>
         })}
         {/* _____ PRODUCT LIST _____ */}
