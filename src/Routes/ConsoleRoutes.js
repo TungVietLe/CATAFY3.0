@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import { Routes, Route, Link} from "react-router-dom";
 
 //screens
 import ConsoleIndex from '../Screens/Console/ConsoleIndex';

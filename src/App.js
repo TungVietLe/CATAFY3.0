@@ -12,6 +12,7 @@ import StoreRoutes from './Routes/StoreRoutes'
 import AdminRoutes from "./Routes/AdminRoutes";
 //Screens
 import LandingScreen from "./Screens/Landing/LandingScreen";
+import LoginPage from './Screens/Landing/Components/LoginPage'
 import PricingPage from "./Screens/Landing/Components/PricingPage";
 
 
@@ -35,7 +36,7 @@ function App() {
         <Route path="/about" element={<div>about</div>}/>
         <Route path="/career" element={<div>career</div>}/>
 
-        <Route path="/console/*" element={user? <ConsoleRoutes/> : <div>Login</div>}/>
+        <Route path="/console/*" element={user? <ConsoleRoutes/> : <LoginPage/>}/>
         <Route path="/:storeidURL/*" element={<StoreRoutes/>}/>
         <Route path="/:storeidURL/admin/*" element={<AdminRoutes/>}/>
         <Route path="*" element={<div>Not found</div>}/>
