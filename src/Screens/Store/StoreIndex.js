@@ -47,7 +47,7 @@ function StoreIndex() {
           return <div key={item.id}>
             <img src={itemData.productImageLink} width='100'/>
             <h3>{itemData.productName}</h3>
-            <button onClick={()=>{handleAddItemToLocalCart(itemData.productName, itemData.productPrice, itemData.productImageLink)}}>+ cart</button>
+            <button onClick={()=>{handleAddItemToLocalCart(storeidURL, itemData.productName, itemData.productPrice, itemData.productImageLink)}}>+ cart</button>
           </div>
         })}
         {/* _____ PRODUCT LIST _____ */}

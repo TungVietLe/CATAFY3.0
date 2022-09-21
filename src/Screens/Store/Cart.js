@@ -1,34 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 //hooks
-import {handleAddItemToLocalCart} from '../../../customHooks/LocalStorage/useLocalStorage'
-import {handlePlaceOrder} from '../../../customHooks/Orders/usePlaceOrder'
+import {handleAddItemToLocalCart} from '../../Hooks/localStorage/handleAddToLocalCart'
 
-function CartContainer({setViewingCart}) {
+function Cart() {
     //params
     const {storeidURL} = useParams()
+
     //
-    const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')))
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem(storeidURL)))
     const refreshCart = () => {
-        setCart(JSON.parse(localStorage.getItem('cart')))
+        setCart(JSON.parse(localStorage.getItem(storeidURL)))
     }
-
-    useEffect(()=>{
-        console.count('cart rendered')
-    }, [])
-
 
 
 
 
 
   return (
-    <div className='CartContainer'>
+    <>
         <h2>Your Cart</h2>
-        <button onClick={()=>{setViewingCart(false)}}>X</button>
         <button onClick={()=>{refreshCart()}}>refresh</button>
-        <button onClick={()=>{localStorage.clear()}}>Clear</button>
-        <button onClick={()=>{handlePlaceOrder(storeidURL)}}>Place Order</button>
+        <button onClick={()=>{localStorage.removeItem(storeidURL)}}>Clear</button>
 
 
 
@@ -40,15 +33,14 @@ function CartContainer({setViewingCart}) {
                 <p>quantity: {itemInCart.quantity}</p>
                 <button 
                     onClick={()=>{
-                        handleAddItemToLocalCart(itemInCart.productName, itemInCart.productPrice, itemInCart.productImageLink)
+                        handleAddItemToLocalCart(storeidURL, itemInCart.productName, itemInCart.productPrice, itemInCart.productImageLink)
                         .then(()=>{refreshCart()})
-                    }}
-                >+</button>
+                }}>+</button>
             </div>
         })}
         {/* CART ITEMS LIST */}
-    </div>
+    </>
   )
 }
 
-export default CartContainer
+export default Cart

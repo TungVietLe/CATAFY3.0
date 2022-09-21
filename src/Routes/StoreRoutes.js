@@ -2,6 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 //pages
 import StoreIndex from '../Screens/Store/StoreIndex';
+import Cart from '../Screens/Store/Cart'
 
 function ConsoleRoutes() {
   return (
@@ -13,7 +14,7 @@ function ConsoleRoutes() {
         </div>
         <Routes>
           <Route index element={<StoreIndex/>}/>
-          <Route path="cart" element={<div>cart page</div>}/>
+          <Route path="cart" element={<Cart/>}/>
         </Routes>
     </>
   )
