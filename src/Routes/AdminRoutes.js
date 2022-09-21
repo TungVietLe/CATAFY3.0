@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route, Link, useParams} from "react-rou
 import {UserContext} from '../App'
 
 import ProductRoutes from './AdminRoutes/ProductRoutes';
+import OrderRoutes from './AdminRoutes/OrderRoutes';
 
 //firebase
 import { doc } from 'firebase/firestore';
@@ -43,7 +44,7 @@ function AdminRoutes() {
             </div>
             <Routes>
                 <Route index element={<div>Admin index</div>}/>
-                <Route path="orders" element={<div>Orders</div>}/>
+                <Route path="orders/*" element={<OrderRoutes/>}/>
                 <Route path="products/*" element={<ProductRoutes/>}/>
                 <Route path="setting" element={<div>setting</div>}/>
             </Routes>
