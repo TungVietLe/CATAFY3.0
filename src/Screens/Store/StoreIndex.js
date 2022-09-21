@@ -6,6 +6,7 @@ import { collection, doc } from 'firebase/firestore';
 //hooks
 import { useReadOneDoc } from '../../Hooks/FetchData/useReadOneDoc';
 import { useReadEntireCollection } from '../../Hooks/FetchData/useReadEntireCollection';
+import { handleAddItemToLocalCart } from '../../Hooks/localStorage/handleAddToLocalCart'
 
 function StoreIndex() {
   const navigateTo = useNavigate()
@@ -37,11 +38,16 @@ function StoreIndex() {
         <h1>{storeData?.storeName}</h1>
         {/* _____ STORE INFO _____ */}
 
+
+
         {/* _____ PRODUCT LIST _____ */}
         {resultArray.map((item)=>{
+          const itemData = item?.data()
+          
           return <div key={item.id}>
-            <img src={item.data().productImageLink} width='100'/>
-            <h3>{item.data().productName}</h3>
+            <img src={itemData.productImageLink} width='100'/>
+            <h3>{itemData.productName}</h3>
+            <button onClick={()=>{handleAddItemToLocalCart(itemData.productName, itemData.productPrice, itemData.productImageLink)}}>+ cart</button>
           </div>
         })}
         {/* _____ PRODUCT LIST _____ */}
