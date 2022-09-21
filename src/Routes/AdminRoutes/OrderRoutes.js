@@ -3,6 +3,7 @@ import {Routes, Route, Link} from "react-router-dom";
 //screens
 import OrderIndex from '../../Screens/Admin/Orders/OrderIndex';
 import ProductNew from '../../Screens/Admin/Products/ProductNew';
+import OrderDetailPage from '../../Screens/Admin/Orders/OrderDetailPage';
 
 
 
@@ -17,6 +18,7 @@ function OrderRoutes() {
         <Routes>
           <Route index element={<OrderIndex/>}/>
           <Route path='new' element={<ProductNew/>}/>
+          <Route path=':orderidURL' element={<OrderDetailPage/>}/>
         </Routes>
     </>
   )

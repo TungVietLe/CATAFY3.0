@@ -1,6 +1,6 @@
 import { collection, doc } from 'firebase/firestore';
 import React, { useContext, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import { db } from '../../../firebase/config';
 import { useReadEntireCollection } from '../../../Hooks/FetchData/useReadEntireCollection';
@@ -37,6 +37,7 @@ function OrderIndex() {
             
           return <div key={order.id}>
             <h3>{order.id}</h3>
+            <Link to={`${order.id}`}>Detail</Link>
           </div>
         })}
         {/* _____ ORDER LIST _____ */}
