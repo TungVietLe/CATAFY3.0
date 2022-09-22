@@ -1,0 +1,19 @@
+$background-primary: #111315;
+$background-secondary: #1a1d1f;
+$background-tertiary: #272b30; 
+$text-primary: #FFFFFF;
+$text-secondary: #D0D6DC;
+$text-tertiary: #AAB1B8;
+$purple: #5a48ff;
+$red: #F34A30;
+$blue: #2A86FF;
+$orange: #DEB224;
+$green: #73da82;
+
+.LandingNav {
+    height: 3rem;
+    background-color: $background-secondary;
+    display: flex; justify-content: space-around; align-items: center;
+    position: fixed; top: 0%; left: 0; right: 0%;
+}
+

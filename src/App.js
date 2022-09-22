@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createContext } from "react";
-import './App.scss'; import './Styles/Console.scss'
+import './App.scss'; import './Styles/Console.scss'; import './Styles/Landing.scss'
 import {Routes, Route, Link } from "react-router-dom";
 
 //firebase
