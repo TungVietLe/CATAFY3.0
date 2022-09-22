@@ -1,0 +1,39 @@
+$background-primary: #111315;
+$background-secondary: #1a1d1f;
+$background-tertiary: #272b30; 
+$text-primary: #FFFFFF;
+$text-secondary: #D0D6DC;
+$text-tertiary: #AAB1B8;
+$purple: #5a48ff;
+$red: #F34A30;
+$blue: #2A86FF;
+$orange: #DEB224;
+$green: #73da82;
+
+
+.ConsoleNav {
+    height: 3rem;
+    background-color: $background-secondary;
+    display: flex; justify-content: space-around; align-items: center;
+    position: fixed; top: 0%; left: 0; right: 0%;
+}
+.ConsoleIndex {
+    .storeContainer {
+      height: 12rem;
+      margin: 1rem 2rem;
+      background-color: $background-tertiary; color: $text-primary;
+      display: flex;
+      border-radius: 1rem;
+      overflow: hidden;
+        
+      p {color: $text-tertiary;}
+      img {width: 50%; object-fit: cover;}
+      .rightSide {
+        padding-left: 2rem;
+        width: 50%;
+        display: flex; flex-direction: column; justify-content: center;
+        .buttonContainer {margin-top: 1rem;}
+        .Sec {margin-left: 0.5rem;}
+      }
+    }
+  }

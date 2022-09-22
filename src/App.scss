@@ -1,6 +1,6 @@
-$background-primary: #1a1f24;
-$background-secondary: #272d34;
-$background-tertiary: #2c3239;
+$background-primary: #111315;
+$background-secondary: #1a1d1f;
+$background-tertiary: #272b30; 
 $text-primary: #FFFFFF;
 $text-secondary: #D0D6DC;
 $text-tertiary: #AAB1B8;
@@ -36,11 +36,11 @@ body {
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $purple;
+  background: $text-tertiary;
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $text-tertiary;
+  background: $text-primary;
 }
 
 
@@ -82,7 +82,7 @@ button {
   cursor: pointer;
 }
 button:hover{
-  opacity: 0.8;
+  opacity: 0.7;
 }
 button:disabled {
   color: $text-tertiary;
@@ -95,12 +95,19 @@ button:disabled {
   font-size: 0.85rem; font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
+  transition: ease 0.3s;
 }.Pri {
   background: $text-primary; color: $background-primary;
-  border: $background-primary 2px solid;
+  border: $text-primary 2px solid;
 }.Sec {
   background: none; color: $text-secondary;
   border: $text-secondary 2px solid;
+}.Highlight {
+  background: $blue; 
+  border: $blue 2px solid;
+}
+.Link:hover {
+  opacity: 0.7;
 }
 
 
@@ -108,26 +115,3 @@ button:disabled {
 
 
 
-
-
-
-
-.ConsoleIndex {
-  .storeContainer {
-    height: 12rem;
-    margin: 1rem 2rem;
-    background-color: $background-secondary; color: $text-primary;
-    display: flex;
-    border-radius: 1rem;
-    overflow: hidden;
-
-    img {width: 50%; object-fit: cover;}
-    .rightSide {
-      padding-left: 2rem;
-      width: 50%;
-      display: flex; flex-direction: column; justify-content: center;
-      .buttonContainer {margin-top: 1rem;}
-      .Sec {margin-left: 0.5rem;}
-    }
-  }
-}

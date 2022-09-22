@@ -9,16 +9,17 @@ import NewStorePage from '../Screens/Console/Components/NewStorePage';
 function ConsoleRoutes() {
   return (
     <>
-        <div>
-            <Link to={''}>Home</Link>
-            <Link to={'learn'}>Learn</Link>
-            <Link to={'new'}>New</Link>
-        </div>
-        <Routes>
-          <Route index element={<ConsoleIndex/>}/>
-          <Route path="new" element={<NewStorePage/>}/>
-          <Route path="learn" element={<div>Learn feature soon!</div>}/>
-        </Routes>
+      <div className='ConsoleNav'>
+          <Link to={''}>Home</Link>
+          <Link to={'learn'}>Learn</Link>
+          <Link to={'new'} className='Link Highlight'>New Store</Link>
+      </div>
+      
+      <Routes>
+        <Route index element={<ConsoleIndex/>}/>
+        <Route path="new" element={<NewStorePage/>}/>
+        <Route path="learn" element={<div>Learn feature soon!</div>}/>
+      </Routes>
     </>
   )
 }
