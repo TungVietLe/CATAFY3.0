@@ -33,7 +33,7 @@ function NewStorePage() {
         <button onClick={()=>{
             handleCreateStore(userid, storeid, storeName, logo)
             .then(()=>{navigateTo('/console')})
-        }}>Test Do not click without carefull investigation</button>
+        }}>Create</button>
     </>
   )
 }

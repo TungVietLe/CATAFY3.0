@@ -13,7 +13,7 @@ function OrderRoutes() {
     <>
         <div>
             <Link to={''}>Close</Link>
-            <Link to={'new'}>New Order</Link>
+            <Link to={'new'} className='button Highlight'>New Order</Link>
         </div>
         <Routes>
           <Route index element={<OrderIndex/>}/>

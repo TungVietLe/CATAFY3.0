@@ -35,12 +35,13 @@ function AdminRoutes() {
 
   return (
     <>
-        {userIsOwner? <>
-            <div>
+        {userIsOwner? <div className='AdminRoutes'>
+            <div className='AdminNav'>
                 <Link to={''}>Overview</Link>
                 <Link to={'orders'}>Orders</Link>
                 <Link to={'products'}>Product</Link>
                 <Link to={'setting'}>Setting</Link>
+                <Link to={`/${storeidURL}`} target='_blank'>View Store</Link>
             </div>
             <Routes>
                 <Route index element={<div>Admin index</div>}/>
@@ -48,7 +49,7 @@ function AdminRoutes() {
                 <Route path="products/*" element={<ProductRoutes/>}/>
                 <Route path="setting" element={<div>setting</div>}/>
             </Routes>
-        </> : <>
+        </div> : <>
             <div>Sorry you are not owner</div>
         </>}
     </>

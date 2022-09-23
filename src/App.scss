@@ -29,7 +29,7 @@ body {
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 /* Track */
 ::-webkit-scrollbar-track {
@@ -47,7 +47,6 @@ body {
 
 
 a {
-  margin-left: 0.5rem;
   color: $text-primary;
   text-decoration: none;
 }
@@ -58,13 +57,13 @@ a {
 input{
   display: block;
   width: 50vw;
-  padding: 0.3rem 1rem; margin: 1rem;
+  padding: 0.5rem 1rem; margin: 1rem;
   border-radius: 0.5rem;
-  border: $background-tertiary 2px solid;
+  border: $text-secondary 3px solid;
   transition: ease 0.5s;
 }
 input:focus{
-  border: $blue 2px solid;
+  border: $blue 3px solid;
   outline: none;
 }
 

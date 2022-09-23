@@ -12,7 +12,7 @@ function ProductRoutes() {
     <>
         <div>
             <Link to={''}>Close</Link>
-            <Link to={'new'}>New Product</Link>
+            <Link to={'new'} className='button Highlight'>New Product</Link>
         </div>
         <Routes>
           <Route index element={<ProductIndex/>}/>

@@ -1,0 +1,28 @@
+$background-primary: #111315;
+$background-secondary: #1a1d1f;
+$background-tertiary: #272b30; 
+$text-primary: #FFFFFF;
+$text-secondary: #D0D6DC;
+$text-tertiary: #AAB1B8;
+$purple: #5a48ff;
+$red: #F34A30;
+$blue: #2A86FF;
+$orange: #DEB224;
+$green: #73da82;
+
+.AdminRoutes {
+    padding-left: 20%;
+    .AdminNav {
+        position: fixed; top: 0%; bottom: 0%; left: 0%; right: 80%;
+        display: flex; flex-direction: column;
+        background-color: $background-secondary;
+        a {
+            padding: 1rem;
+            color: $text-secondary;
+            width: 100%;
+        }
+        a:hover {
+            color: $text-primary; background-color: $background-tertiary;
+        }
+    }
+}
