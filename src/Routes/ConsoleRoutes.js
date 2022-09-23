@@ -12,7 +12,7 @@ function ConsoleRoutes() {
       <div className='ConsoleNav'>
           <Link to={''}>Home</Link>
           <Link to={'learn'}>Learn</Link>
-          <Link to={'new'} className='Link Highlight'>New Store</Link>
+          <Link to={'new'} className='button Highlight'>New Store</Link>
       </div>
       
       <Routes>
