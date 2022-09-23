@@ -32,6 +32,7 @@ function App() {
     <UserContext.Provider value={user}>
       <Routes>
         <Route path="/" element={<LandingScreen/>}/>
+        <Route path="/login" element={<LoginPage/>}/>
         <Route path="/pricing" element={<PricingPage/>}/>
         <Route path="/about" element={<div>about</div>}/>
         <Route path="/career" element={<div>career</div>}/>
