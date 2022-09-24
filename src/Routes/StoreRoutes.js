@@ -6,6 +6,7 @@ import { UserContext } from '../App';
 import StoreIndex from '../Screens/Store/StoreIndex';
 import Cart from '../Screens/Store/Cart'
 import CheckoutPage from '../Screens/Store/Cart related/CheckoutPage';
+import ProductDetailPage from '../Screens/Store/Product Related/ProductDetailPage';
 import LoginPage from '../Screens/Landing/Components/LoginPage';
 
 function ConsoleRoutes() {
@@ -26,6 +27,7 @@ function ConsoleRoutes() {
         <Routes>
           <Route index element={<StoreIndex/>}/>
           <Route path="cart" element={<Cart/>}/>
+          <Route path="product/:productidURL" element={<ProductDetailPage/>}/>
           <Route path="cart/checkout" element={user? <CheckoutPage/> : <LoginPage/>}/>
         </Routes>
     </>

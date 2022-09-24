@@ -44,7 +44,7 @@ function StoreIndex() {
           {storeProducts.map((item)=>{
             const itemData = item?.data()
             
-            return <div className='productContainer' key={item.id} onClick={()=>{navigateTo('product-ab')}}>
+            return <div className='productContainer' key={item.id} onClick={()=>{navigateTo(`product/${item.id}`)}}>
               <img src={itemData.productImageLink}/>
               <h3>{itemData.productName}</h3>
               <p>{itemData.productPrice} USD</p>
