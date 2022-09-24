@@ -9,7 +9,7 @@ import OrderRoutes from './AdminRoutes/OrderRoutes';
 import { doc } from 'firebase/firestore';
 import {db} from '../firebase/config'
 //hooks
-import {useReadOneDoc} from '../Hooks/FetchData/useReadOneDoc'
+import {handleReadOneDoc} from '../Hooks/FetchData/useReadOneDoc'
 
 
 function AdminRoutes() {
@@ -18,15 +18,16 @@ function AdminRoutes() {
     //context
     const user = useContext(UserContext)
     const userid = user?.uid
-    //hooks
-    const {handleReadOneDoc, resultDoc} = useReadOneDoc()
 
     //
     useEffect(()=>{
         handleReadOneDoc(doc(db, 'store collection', storeidURL))
+        .then((res)=>{setstoreConfig(res)})
     }, [])
-    const storeOwnerid = resultDoc?.data().ownerID
-    const userIsOwner = user && resultDoc && storeOwnerid == userid // user exist and store exist and storeownerid = userid
+
+    const [storeConfig, setstoreConfig] = useState(); const storeConfigData = storeConfig?.data()
+    const storeOwnerid = storeConfigData?.ownerID
+    const userIsOwner = user && storeConfig && storeOwnerid == userid // user exist and store exist and storeownerid = userid
 
 
 

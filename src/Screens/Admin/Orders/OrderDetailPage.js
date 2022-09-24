@@ -1,24 +1,23 @@
 import { doc } from 'firebase/firestore'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { db } from '../../../firebase/config'
-import { useReadOneDoc } from '../../../Hooks/FetchData/useReadOneDoc'
+import { handleReadOneDoc } from '../../../Hooks/FetchData/useReadOneDoc'
 
 function OrderDetailPage() {
     //params
     const {storeidURL, orderidURL} = useParams()
-    //hooks
-    const {handleReadOneDoc, resultDoc} = useReadOneDoc()
 
     
     //
     useEffect(()=>{
         const storeDoc = doc(db, 'store collection', storeidURL)
         const orderDoc = doc(storeDoc, 'orders', orderidURL)
-        handleReadOneDoc(orderDoc)
+        handleReadOneDoc(orderDoc).then((res)=>{setOrder(res)})
     }, [])
 
-    const orderCart = resultDoc?.data()?.cart
+    const [order, setOrder] = useState(); const orderData = order?.data()
+    const orderCart = orderData?.cart
 
   return (
     <>

@@ -3,7 +3,7 @@ import { useState } from "react"
 //firebase
 import {getDoc} from 'firebase/firestore'
 
-const useReadOneDoc = () => {
+/* const useReadOneDoc = () => {
     const [resultDoc, setResultDoc] = useState(null)
 
    
@@ -16,4 +16,11 @@ const useReadOneDoc = () => {
     return {handleReadOneDoc, resultDoc}
 }
 
-export {useReadOneDoc}
+export {useReadOneDoc} */
+
+export const handleReadOneDoc = (targetDocRef) => {
+    return new Promise(async(resolve, reject) => {
+        const docSnap = await getDoc(targetDocRef)
+        resolve(docSnap)
+    })
+}

@@ -4,7 +4,7 @@ import { UserContext } from '../../App';
 import { db } from '../../firebase/config';
 import { collection, doc } from 'firebase/firestore';
 //hooks
-import { useReadOneDoc } from '../../Hooks/FetchData/useReadOneDoc';
+import { handleReadOneDoc } from '../../Hooks/FetchData/useReadOneDoc';
 import { handleReadCollection } from '../../Hooks/FetchData/useReadEntireCollection';
 import { handleAddItemToLocalCart } from '../../Hooks/localStorage/handleAddToLocalCart'
 
@@ -12,9 +12,6 @@ function StoreIndex() {
   const navigateTo = useNavigate()
   //params
   const {storeidURL} = useParams()
-  //hooks
-  const {handleReadOneDoc, resultDoc} = useReadOneDoc()
-  const storeData = resultDoc?.data()
 
   
 
@@ -25,18 +22,19 @@ function StoreIndex() {
   useEffect(()=>{
     const storeDoc = doc(db, 'store collection', storeidURL)
     const productCol = collection(storeDoc, 'products')
+    handleReadOneDoc(storeDoc).then((res)=>{setStoreConfig(res)})
     handleReadCollection(productCol).then((res)=>{setStoreProducts(res)})
-    handleReadOneDoc(storeDoc)
   }, [])
 
+  const [storeConfig, setStoreConfig] = useState(); const storeConfigData = storeConfig?.data()
   const [storeProducts, setStoreProducts] = useState([])
 
 
   return (
     <div className='StoreIndex'>
         {/* _____ STORE INFO _____ */}
-        <img className='heroImage' src={storeData?.logoLink}/>
-        <h1>{storeData?.storeName}</h1>
+        <img className='heroImage' src={storeConfigData?.logoLink}/>
+        <h1>{storeConfigData?.storeName}</h1>
         {/* _____ STORE INFO _____ */}
 
 
