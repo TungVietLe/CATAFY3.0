@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 import { db } from '../../firebase/config';
 import { collection, doc } from 'firebase/firestore';
 //hooks
 import { useReadOneDoc } from '../../Hooks/FetchData/useReadOneDoc';
-import { useReadEntireCollection } from '../../Hooks/FetchData/useReadEntireCollection';
+import { handleReadCollection } from '../../Hooks/FetchData/useReadEntireCollection';
 import { handleAddItemToLocalCart } from '../../Hooks/localStorage/handleAddToLocalCart'
 
 function StoreIndex() {
@@ -13,7 +13,6 @@ function StoreIndex() {
   //params
   const {storeidURL} = useParams()
   //hooks
-  const {handleReadCollection, resultArray} = useReadEntireCollection()
   const {handleReadOneDoc, resultDoc} = useReadOneDoc()
   const storeData = resultDoc?.data()
 
@@ -26,9 +25,11 @@ function StoreIndex() {
   useEffect(()=>{
     const storeDoc = doc(db, 'store collection', storeidURL)
     const productCol = collection(storeDoc, 'products')
-    handleReadCollection(productCol)
+    handleReadCollection(productCol).then((res)=>{setStoreProducts(res)})
     handleReadOneDoc(storeDoc)
   }, [])
+
+  const [storeProducts, setStoreProducts] = useState([])
 
 
   return (
@@ -42,7 +43,7 @@ function StoreIndex() {
 
         {/* _____ PRODUCT LIST _____ */}
         <div className='productList'>
-          {resultArray.map((item)=>{
+          {storeProducts.map((item)=>{
             const itemData = item?.data()
             
             return <div className='productContainer' key={item.id} onClick={()=>{navigateTo('product-ab')}}>

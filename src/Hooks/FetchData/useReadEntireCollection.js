@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 import {getDocs} from 'firebase/firestore'
 
 
-function useReadEntireCollection() {
+/* function useReadEntireCollection() {
   const [resultArray, setItemArray] = useState([])
 
   const handleReadCollection = async(targetCollection) => {
@@ -18,4 +18,15 @@ function useReadEntireCollection() {
   return {handleReadCollection, resultArray}
 }
 
-export {useReadEntireCollection}
+export {useReadEntireCollection} */
+
+export const handleReadCollection = (targetCollection) => {
+  return new Promise(async(resolve, reject) => {
+    const resultArray = []
+    const querySnapshot = await getDocs(targetCollection)
+    querySnapshot.forEach((item)=>{
+      resultArray.push(item)
+    })
+    resolve(resultArray)
+  })
+}

@@ -1,9 +1,9 @@
 import { collection, doc } from 'firebase/firestore';
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import { db } from '../../../firebase/config';
-import { useReadEntireCollection } from '../../../Hooks/FetchData/useReadEntireCollection';
+import { handleReadCollection } from '../../../Hooks/FetchData/useReadEntireCollection';
 
 function ProductIndex() {
   const navigateTo = useNavigate()
@@ -11,9 +11,6 @@ function ProductIndex() {
   const user = useContext(UserContext); const userid = user?.uid
   //params
   const {storeidURL} = useParams()
-  //hooks
-  const {handleReadCollection, resultArray} = useReadEntireCollection()
-
   
 
 
@@ -24,7 +21,10 @@ function ProductIndex() {
     const storeDoc = doc(db, 'store collection', storeidURL)
     const productCol = collection(storeDoc, 'products')
     handleReadCollection(productCol)
+    .then((res)=>{setMyProducts(res)})
   }, [])
+
+  const [myProducts, setMyProducts] = useState([])
 
 
 
@@ -33,7 +33,7 @@ function ProductIndex() {
         <h1>Fetch list here</h1>
 
         {/* _____ PRODUCT LIST _____ */}
-        {resultArray.map((item)=>{
+        {myProducts.map((item)=>{
           const itemData = item.data()
 
           return <div key={item.id}>
