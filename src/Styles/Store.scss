@@ -1,0 +1,53 @@
+$background-primary: #111315;
+$background-secondary: #1a1d1f;
+$background-tertiary: #272b30; 
+$text-primary: #FFFFFF;
+$text-secondary: #D0D6DC;
+$text-tertiary: #AAB1B8;
+$purple: #5a48ff;
+$red: #F34A30;
+$blue: #2A86FF;
+$orange: #DEB224;
+$green: #73da82;
+
+
+.StoreNav {
+    height: 3rem;
+    background-color: $background-tertiary;
+    position: fixed; top: 0%; right: 0%; left: 0%;
+    display: flex; justify-content: space-around; align-items: center;
+}
+
+
+.StoreIndex{
+
+    .heroImage {
+        width: 100%; height: 100vh;
+    }
+
+    .productList {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3% 5%;
+        grid-auto-flow: row;
+
+        padding: 0 5%;
+
+
+        .productContainer{
+            border-radius: 0.5rem;
+            display: flex; flex-direction: column; align-items: flex-start;
+            cursor: pointer;
+            
+            img {
+            width: 100%; height: 100%; height: 20rem;
+            border-radius: 0.5rem;
+            }
+            h3 {color: $text-primary; font-weight: 600; margin-top: 1rem;}
+            p {color: $text-tertiary; font-weight: 500; margin-bottom: 1rem;}
+        }
+        .productContainer:hover {
+            p {color: $orange;}
+        }
+    }
+}

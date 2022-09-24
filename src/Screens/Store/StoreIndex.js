@@ -32,26 +32,28 @@ function StoreIndex() {
 
 
   return (
-    <>
+    <div className='StoreIndex'>
         {/* _____ STORE INFO _____ */}
-        <img src={storeData?.logoLink} width='100%'/>
+        <img className='heroImage' src={storeData?.logoLink}/>
         <h1>{storeData?.storeName}</h1>
         {/* _____ STORE INFO _____ */}
 
 
 
         {/* _____ PRODUCT LIST _____ */}
-        {resultArray.map((item)=>{
-          const itemData = item?.data()
-          
-          return <div key={item.id}>
-            <img src={itemData.productImageLink} width='100'/>
-            <h3>{itemData.productName}</h3>
-            <button onClick={()=>{handleAddItemToLocalCart(storeidURL, itemData.productName, itemData.productPrice, itemData.productImageLink)}}>+ cart</button>
-          </div>
-        })}
+        <div className='productList'>
+          {resultArray.map((item)=>{
+            const itemData = item?.data()
+            
+            return <div className='productContainer' key={item.id} onClick={()=>{navigateTo('product-ab')}}>
+              <img src={itemData.productImageLink}/>
+              <h3>{itemData.productName}</h3>
+              <p>{itemData.productPrice} USD</p>
+            </div>
+          })}
+        </div>
         {/* _____ PRODUCT LIST _____ */}
-    </>
+    </div>
   )
 }
 

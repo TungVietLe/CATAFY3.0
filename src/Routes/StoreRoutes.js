@@ -18,10 +18,10 @@ function ConsoleRoutes() {
 
   return (
     <>
-        <div>
+        <div className='StoreNav'>
             <Link to={''}>Store</Link>
-            <Link to={'cart'}>cart</Link>
             <Link to={'admin'}>admin</Link>
+            <Link className='button Highlight' to={'cart'}>cart</Link>
         </div>
         <Routes>
           <Route index element={<StoreIndex/>}/>
