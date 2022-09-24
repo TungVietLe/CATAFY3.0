@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
 //firebase
@@ -7,7 +7,7 @@ import { db } from '../../firebase/config';
 //context
 import {UserContext} from '../../App'
 //hooks
-import {useFilter} from '../../Hooks/FetchData/useFilter'
+import {handleFilterFrom} from '../../Hooks/FetchData/useFilter'
 
 
 
@@ -15,22 +15,24 @@ function ConsoleIndex() {
   //
   const user = useContext(UserContext); const userid = user.uid
   const navigateTo = useNavigate()
-  //hooks
-  const {handleFilterFrom, filteredArray} = useFilter()
 
 
   //
-  const storeCol = collection(db, 'store collection')
   useEffect(()=>{
+    const storeCol = collection(db, 'store collection')
     handleFilterFrom(storeCol, 'ownerID', '==', userid)
+    .then((result)=>{setMyStoreArray(result)})
   }, [])
+  
+  const [myStoreArray, setMyStoreArray] = useState([])
+
 
 
   return (
     <div className='ConsoleIndex'>
       <h1>Console index</h1>
 
-      {filteredArray.map((userStore)=>{
+      {myStoreArray.map((userStore)=>{
         return <div className='storeContainer' key={userStore.id}>
           <img src={userStore.data().logoLink} width='100'/>
           <div className='rightSide'>
