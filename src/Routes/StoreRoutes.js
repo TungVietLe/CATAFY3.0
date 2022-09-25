@@ -35,9 +35,8 @@ function ConsoleRoutes() {
 
       <Routes>
         <Route index element={<StoreIndex/>}/>
-        <Route path="cart" element={<Cart/>}/>
         <Route path="product/:productidURL" element={<ProductDetailPage/>}/>
-        <Route path="cart/checkout" element={user? <CheckoutPage/> : <LoginPage/>}/>
+        <Route path="checkout" element={user? <CheckoutPage/> : <LoginPage/>}/>
       </Routes>
     </>
   )

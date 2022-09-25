@@ -49,7 +49,26 @@ $green: #73da82;
 
 
 .CartDrawer {
-    position: fixed; top: 0; bottom: 0%; right: 0%;
+    position: fixed; top: 0; bottom: 0%; right: 0%; z-index: 1;
     width: 20%; min-width:300px;
-    background-color: #2A86FF;
+    background-color: $text-secondary; color: $background-primary;
+    overflow-y: scroll;
+    padding-top: 20%; padding-bottom: 50%;
+
+    
+    .CartHeader {
+        position: fixed; top: 0%; right: 0%; height: 15%;
+        display: flex; align-items: center;
+        background-color: $blue;
+    }
+    .CartFooter {
+        position: fixed; bottom: 0%; right: 0%; height: 10%; 
+        width: 20%; min-width: 300px;
+        background-color: $blue;
+        display: flex; align-items: center; justify-content: center;
+        a{width: 80%; text-align: center;}
+    }
+}
+.CartDrawer::-webkit-scrollbar {
+    width: 0;
 }

@@ -19,11 +19,17 @@ function Cart({openCart}) {
 
   return (
     <div className='CartDrawer'>
-        <h2>Your Cart</h2>
-        <button onClick={()=>{openCart(false)}}>X</button>
-        <button onClick={()=>{refreshCart()}}>refresh</button>
-        <button onClick={()=>{localStorage.removeItem(storeidURL)}}>Clear</button>
-        {cart && <Link to={'checkout'}>Place order</Link>} {/* only available when cart has item inside */}
+        <div className='CartHeader'>
+            <h2>Your Cart</h2>
+            <button onClick={()=>{openCart(false)}}>X</button>
+            <button onClick={()=>{refreshCart()}}>refresh</button>
+            <button onClick={()=>{localStorage.removeItem(storeidURL)}}>Clear</button>
+        </div>
+
+        {cart && <div className='CartFooter'>
+            <Link className='button Pri' to={'checkout'}>Checkout</Link> {/* only available when cart has item inside */}
+        </div>}
+        
 
 
 
