@@ -22,7 +22,7 @@ $green: #73da82;
 
     .productList {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 5% 3%;
         grid-auto-flow: row;
 
@@ -45,4 +45,11 @@ $green: #73da82;
             p {color: $orange;}
         }
     }
+}
+
+
+.CartDrawer {
+    position: fixed; top: 0; bottom: 0%; right: 0%;
+    width: 20%; min-width:300px;
+    background-color: #2A86FF;
 }

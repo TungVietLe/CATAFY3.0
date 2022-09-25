@@ -3,7 +3,7 @@ import {Link, useParams} from 'react-router-dom'
 //hooks
 import {handleAddItemToLocalCart} from '../../Hooks/localStorage/handleAddToLocalCart'
 
-function Cart() {
+function Cart({openCart}) {
     //params
     const {storeidURL} = useParams()
 
@@ -18,8 +18,9 @@ function Cart() {
 
 
   return (
-    <>
+    <div className='CartDrawer'>
         <h2>Your Cart</h2>
+        <button onClick={()=>{openCart(false)}}>X</button>
         <button onClick={()=>{refreshCart()}}>refresh</button>
         <button onClick={()=>{localStorage.removeItem(storeidURL)}}>Clear</button>
         {cart && <Link to={'checkout'}>Place order</Link>} {/* only available when cart has item inside */}
@@ -41,7 +42,7 @@ function Cart() {
         })}
         {/* CART ITEMS LIST */}
 
-    </>
+    </div>
   )
 }
 
