@@ -34,7 +34,7 @@ function StoreIndex() {
     <div className='StoreIndex'>
         {/* _____ STORE INFO _____ */}
         <img className='heroImage' src={storeConfigData?.logoLink}/>
-        <h1>{storeConfigData?.storeName}</h1>
+        <h1>Welcome to {storeConfigData?.storeName}</h1>
         {/* _____ STORE INFO _____ */}
 
 

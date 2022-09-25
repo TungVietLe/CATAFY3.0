@@ -9,9 +9,11 @@ import NewStorePage from '../Screens/Console/Components/NewStorePage';
 function ConsoleRoutes() {
   return (
     <>
-      <div className='ConsoleNav'>
+      <div className='Navbar'>
+        <div className='Elements'>
           <Link to={''}>Home</Link>
           <Link to={'learn'}>Learn</Link>
+        </div>
           <Link to={'new'} className='button Highlight'>New Store</Link>
       </div>
       

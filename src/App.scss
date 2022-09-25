@@ -114,6 +114,17 @@ button:disabled {
 
 
 
+.Navbar {
+  height: 4rem;
+  background-color: #11131574;
+  position: fixed; top: 0%; right: 0%; left: 0%;
+  display: flex; align-items: center; justify-content: space-around;
+  .Elements {
+      width: 70%;
+      display: flex; align-items: center; justify-content: flex-start; gap: 2rem;
+      font-weight: 500;
+  }
+}
 
 
 

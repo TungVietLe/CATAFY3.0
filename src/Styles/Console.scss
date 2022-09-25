@@ -11,12 +11,7 @@ $orange: #DEB224;
 $green: #73da82;
 
 
-.ConsoleNav {
-    height: 3rem;
-    background-color: $background-secondary;
-    display: flex; justify-content: space-around; align-items: center;
-    position: fixed; top: 0%; left: 0; right: 0%;
-}
+
 .ConsoleIndex {
     .storeContainer {
       height: 12rem;
