@@ -24,10 +24,22 @@ function NewStorePage() {
   return (
     <>
         <h2>New Store</h2>
+
         {/* _____ INPUTS _____ */}
-        <input placeholder='name' onChange={(e)=>{setStoreName(e.target.value)}}/>
-        <input placeholder='store id' onChange={(e)=>{setStoreid(e.target.value)}}/>
-        <input type={'file'} onChange={(e)=>{setLogo(e.target.files[0])}}/>
+        <form>
+          <label>
+            Store Name
+            <input placeholder='name' onChange={(e)=>{setStoreName(e.target.value)}}/>
+          </label>
+          <label>
+            Store URL
+          <input placeholder='store id' onChange={(e)=>{setStoreid(e.target.value)}}/>
+          </label>
+          <label>
+            Logo
+            <input type={'file'} onChange={(e)=>{setLogo(e.target.files[0])}}/>
+          </label>
+        </form>
         {/* _____ INPUTS _____ */}
 
         <button onClick={()=>{

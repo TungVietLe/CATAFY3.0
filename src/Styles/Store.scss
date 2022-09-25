@@ -4,6 +4,7 @@ $background-tertiary: #272b30;
 $text-primary: #FFFFFF;
 $text-secondary: #D0D6DC;
 $text-tertiary: #AAB1B8;
+$highlight: #2A86FF;
 $purple: #5a48ff;
 $red: #F34A30;
 $blue: #2A86FF;
@@ -62,7 +63,7 @@ $green: #73da82;
         width: 20%; min-width: 250px;
         position: fixed; top: 0%; right: 0%; height: 15%; 
         display: flex; align-items: center; justify-content: space-around;
-        background-color: $blue; color: $text-primary;
+        background-color: $highlight; color: $text-primary;
     }
     .CartFooter {
         width: 20%; min-width: 250px; height: 15%;
