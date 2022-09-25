@@ -49,24 +49,29 @@ $green: #73da82;
 
 
 .CartDrawer {
-    position: fixed; top: 0; bottom: 0%; right: 0%; z-index: 1;
-    width: 20%; min-width:300px;
-    background-color: $text-secondary; color: $background-primary;
+    width: 20%; min-width:250px;
+    position: fixed; top: 0; bottom: 0%; right: 0%; z-index: 2;
+    background-color: $background-tertiary;
     overflow-y: scroll;
     padding-top: 20%; padding-bottom: 50%;
+    box-shadow: rgb(0, 0, 0) 0px 54px 55px, rgb(0, 0, 0) 0px -12px 30px;
+    
 
     
     .CartHeader {
-        position: fixed; top: 0%; right: 0%; height: 15%;
-        display: flex; align-items: center;
-        background-color: $blue;
+        width: 20%; min-width: 250px;
+        position: fixed; top: 0%; right: 0%; height: 15%; 
+        display: flex; align-items: center; justify-content: space-around;
+        background-color: $blue; color: $text-primary;
     }
     .CartFooter {
-        position: fixed; bottom: 0%; right: 0%; height: 10%; 
-        width: 20%; min-width: 300px;
-        background-color: $blue;
+        width: 20%; min-width: 250px; height: 15%;
+        position: fixed; bottom: 0%; right: 0%;  
         display: flex; align-items: center; justify-content: center;
-        a{width: 80%; text-align: center;}
+        a{
+            width: 80%; text-align: center;
+            box-shadow: rgb(0, 0, 0) 0px 54px 55px, rgb(0, 0, 0) 0px -12px 30px;
+        }
     }
 }
 .CartDrawer::-webkit-scrollbar {

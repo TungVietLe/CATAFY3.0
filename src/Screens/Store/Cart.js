@@ -22,12 +22,12 @@ function Cart({openCart}) {
         <div className='CartHeader'>
             <h2>Your Cart</h2>
             <button onClick={()=>{openCart(false)}}>X</button>
+        </div>
             <button onClick={()=>{refreshCart()}}>refresh</button>
             <button onClick={()=>{localStorage.removeItem(storeidURL)}}>Clear</button>
-        </div>
 
         {cart && <div className='CartFooter'>
-            <Link className='button Pri' to={'checkout'}>Checkout</Link> {/* only available when cart has item inside */}
+            <Link className='button Pri' to={'checkout'} onClick={()=>openCart(false)}>Checkout</Link> {/* only available when cart has item inside */}
         </div>}
         
 
