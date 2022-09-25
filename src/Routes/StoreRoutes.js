@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import {Routes, Route, Link, NavLink} from "react-router-dom";
 import { UserContext } from '../App';
 
 //pages
@@ -25,9 +25,9 @@ function ConsoleRoutes() {
     <>
       <div className='Navbar'>
         <div className='Elements'>
-          <Link to={''}>Home</Link>
-          <Link to={'admin'}>Admin</Link>
-          <Link to={'admin'}>About Us</Link>
+          <Link to={''}>Logo</Link>
+          <NavLink to={'admin'}>Admin</NavLink>
+          <NavLink to={'about'}>About Us</NavLink>
         </div>
           <Link className='button Highlight' onClick={()=>{openCart(!cartisOpen)}}>cart</Link>
       </div>
