@@ -20,9 +20,12 @@ function ConsoleRoutes() {
   return (
     <>
         <div className='StoreNav'>
-            <Link to={''}>Store</Link>
-            <Link to={'admin'}>admin</Link>
-            <Link className='button Highlight' to={'cart'}>cart</Link>
+          <div className='Elements'>
+            <Link to={''}>Home</Link>
+            <Link to={'admin'}>Admin</Link>
+            <Link to={'admin'}>About Us</Link>
+          </div>
+          <Link className='button Highlight' to={'cart'}>cart</Link>
         </div>
         <Routes>
           <Route index element={<StoreIndex/>}/>
