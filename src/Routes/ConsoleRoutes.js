@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route, Link} from "react-router-dom";
+import CatafyLogo from '../logo.svg'
 
 //screens
 import ConsoleIndex from '../Screens/Console/ConsoleIndex';
@@ -11,6 +12,7 @@ function ConsoleRoutes() {
     <>
       <div className='Navbar'>
         <div className='Elements'>
+          <img src={CatafyLogo}/>
           <Link to={''}>Home</Link>
           <Link to={'learn'}>Learn</Link>
         </div>
