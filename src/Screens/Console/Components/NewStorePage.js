@@ -16,6 +16,11 @@ function NewStorePage() {
     const [storeName, setStoreName] = useState()
     const [storeid, setStoreid] = useState()
     const [logo, setLogo] = useState()
+    const [banner, setBanner] = useState()
+    //Receive Order Method
+    const [acceptPickUp, setPickUp] = useState(false)
+    const [acceptDelivery, setDelivery] = useState(false)
+
 
 
 
@@ -29,15 +34,24 @@ function NewStorePage() {
         <form>
           <label>
             Store Name
-            <input placeholder='name' onChange={(e)=>{setStoreName(e.target.value)}}/>
+            <input onChange={(e)=>{setStoreName(e.target.value)}}/>
           </label>
           <label>
             Store URL
-          <input placeholder='store id' onChange={(e)=>{setStoreid(e.target.value)}}/>
+          <input placeholder='e.g. mystore123' onChange={(e)=>{setStoreid(e.target.value)}}/>
           </label>
           <label>
             Logo
             <input type={'file'} onChange={(e)=>{setLogo(e.target.files[0])}}/>
+          </label>
+          <label>
+            Banner
+            <input type={'file'} onChange={(e)=>{setBanner(e.target.files[0])}}/>
+          </label>
+          <label>
+            How Customer Receive Order?
+            <div className={`select ${acceptPickUp}`} onClick={()=>setPickUp(!acceptPickUp)}>At Store</div>
+            <div className={`select ${acceptDelivery}`} onClick={()=>setDelivery(!acceptDelivery)}>Delivery</div>
           </label>
         </form>
         {/* _____ INPUTS _____ */}

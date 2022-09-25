@@ -72,16 +72,6 @@ input:focus{
   outline: none;
 }
 
-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5% 3%;
-  grid-auto-flow: row;
-  padding: 0% 10%;
-  input {
-    width: 100%;
-  }
-}
 
 
 
@@ -106,7 +96,6 @@ button:disabled {
 
 
 .button {
-  margin: 0%;
   font-size: 0.85rem; font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
@@ -124,6 +113,38 @@ button:disabled {
 .button:hover {
   opacity: 0.7;
 }
+
+
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10% 5%;
+  grid-auto-flow: row;
+  padding: 10% 10%;
+  input {
+    width: 100%;
+  }
+  label {
+    color: $text-tertiary; font-size: 0.7rem; font-weight: 500;
+  }
+  .abc {
+    color: red;
+  }
+  .select {
+    margin-top: 0.3rem;
+    font-size: 0.8rem; font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem; border: $text-tertiary 2px solid;
+    transition: ease 0.3s;
+  }.true {
+    color: $green;border: $green 2px solid;
+  }
+}
+
+
+
+
 
 
 
