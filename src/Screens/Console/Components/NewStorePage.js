@@ -20,6 +20,13 @@ function NewStorePage() {
     //Receive Order Method
     const [acceptPickUp, setPickUp] = useState(false)
     const [acceptDelivery, setDelivery] = useState(false)
+    //Reservation
+    const [requireBooking, setBooking] = useState(false)
+
+    //Validity
+    const validStoreName = storeName && storeName !== ''
+    const validStoreid = storeid && storeid !== '' && !storeid.includes(' ') && !storeid.includes('/')
+    const validOveral = validStoreName && validStoreid && logo && banner
 
 
 
@@ -29,6 +36,7 @@ function NewStorePage() {
   return (
     <>
         <h2>New Store</h2>
+        {validOveral && <p>Heeeee</p>}
 
         {/* _____ INPUTS _____ */}
         <form>
@@ -53,13 +61,21 @@ function NewStorePage() {
             <div className={`select ${acceptPickUp}`} onClick={()=>setPickUp(!acceptPickUp)}>At Store</div>
             <div className={`select ${acceptDelivery}`} onClick={()=>setDelivery(!acceptDelivery)}>Delivery</div>
           </label>
+          <label>
+            Are Customer Required To Make A Reservation?
+            <div className={`select ${requireBooking}`} onClick={()=>setBooking(true)}>Yes</div>
+            <div className={`select ${!requireBooking}`} onClick={()=>setBooking(false)}>No</div>
+          </label>
         </form>
         {/* _____ INPUTS _____ */}
 
-        <button id='createStoreButton' onClick={()=>{
+        <button id='createStoreButton' 
+          disabled={!validOveral}
+          onClick={()=>{
             handleCreateStore(userid, storeid, storeName, logo)
             .then(()=>{navigateTo('/console')})
-        }}>Create</button>
+          }}
+        >Create</button>
     </>
   )
 }
