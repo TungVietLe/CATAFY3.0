@@ -56,7 +56,7 @@ function NewStorePage() {
         </form>
         {/* _____ INPUTS _____ */}
 
-        <button onClick={()=>{
+        <button id='createStoreButton' onClick={()=>{
             handleCreateStore(userid, storeid, storeName, logo)
             .then(()=>{navigateTo('/console')})
         }}>Create</button>
