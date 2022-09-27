@@ -37,8 +37,8 @@ function ProductIndex() {
           const itemData = item.data()
 
           return <div key={item.id}>
-            <img src={itemData.productImageLink} width='100'/>
-            <h3>{itemData.productName}</h3>
+            <img src={itemData.thumbnailLink} width='100'/>
+            <h3>{itemData.name}</h3>
           </div>
         })}
         {/* _____ PRODUCT LIST _____ */}

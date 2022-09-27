@@ -35,9 +35,9 @@ function Cart({openCart}) {
 
         {/* CART ITEMS LIST */}
         {cart?.map((itemInCart)=>{
-            return <div key={itemInCart.productName}>
-                <img src={itemInCart.productImageLink} width='150'/>
-                <h4>{itemInCart.productName}</h4>
+            return <div key={itemInCart.name}>
+                <img src={itemInCart.thumbnailLink} width='150'/>
+                <h4>{itemInCart.name}</h4>
                 <p>quantity: {itemInCart.quantity}</p>
                 <button 
                     onClick={()=>{

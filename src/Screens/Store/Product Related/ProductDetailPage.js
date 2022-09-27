@@ -25,12 +25,12 @@ function ProductDetailPage() {
     <div>
         <h1>Product Detail</h1>
         <p>Params: {productidURL}</p>
-        <img src={productData?.productImageLink} width='50%'/>
-        <p>{productData?.productName}</p>
+        <img src={productData?.thumbnailLink} width='50%'/>
+        <p>{productData?.name}</p>
 
         <button 
             disabled={allowedAddCart}
-            onClick={()=>{handleAddItemToLocalCart(storeidURL, productData.productName, productData.productPrice, productData.productImageLink)}}
+            onClick={()=>{handleAddItemToLocalCart(storeidURL, productData.name, productData.price, productData.thumbnailLink)}}
         >ADD TO CART</button>
     </div>
   )

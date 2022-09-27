@@ -36,11 +36,11 @@ function ConsoleIndex() {
         return <div className='storeContainer' key={userStore.id}>
           <img src={userStore.data().logoLink} width='100'/>
           <div className='rightSide'>
-            <h2>{userStore.data().storeName}</h2>
+            <h2>{userStore.data().name}</h2>
             <p>id: {userStore.id}</p>
             <div className='buttonContainer'>
-              <Link className='button Pri' to={`/${userStore.data().storeID}/admin`} target='_blank'>Admin</Link>
-              <Link className='button Sec' to={`/${userStore.data().storeID}`} target='_blank'>View store</Link>
+              <Link className='button Pri' to={`/${userStore.id}/admin`} target='_blank'>Admin</Link>
+              <Link className='button Sec' to={`/${userStore.id}`} target='_blank'>View store</Link>
             </div>
           </div>
         </div>

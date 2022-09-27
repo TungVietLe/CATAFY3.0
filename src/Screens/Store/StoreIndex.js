@@ -34,7 +34,7 @@ function StoreIndex() {
     <div className='StoreIndex'>
         {/* _____ STORE INFO _____ */}
         <img className='heroImage' src={storeConfigData?.logoLink}/>
-        <h1>Welcome to {storeConfigData?.storeName}</h1>
+        <h1>Welcome to {storeConfigData?.name}</h1>
         {/* _____ STORE INFO _____ */}
 
 
@@ -45,9 +45,9 @@ function StoreIndex() {
             const itemData = item?.data()
             
             return <div className='productContainer' key={item.id} onClick={()=>{navigateTo(`product/${item.id}`)}}>
-              <img src={itemData.productImageLink}/>
-              <h3>{itemData.productName}</h3>
-              <p>{itemData.productPrice} USD</p>
+              <img src={itemData.thumbnailLink}/>
+              <h3>{itemData.name}</h3>
+              <p>{itemData.price} USD</p>
             </div>
           })}
         </div>
