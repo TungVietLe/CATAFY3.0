@@ -15,10 +15,10 @@ export const handleAddItemToLocalCart = (storeid, addProdName, addProdPrice, add
         }
         else {
             const newItem = {
-                productName: addProdName, 
+                name: addProdName, 
                 quantity: 1, 
-                productImageLink: addProdImgLink,
-                productPrice: addProdPrice
+                thumbnailLink: addProdImgLink,
+                price: addProdPrice
             }
             const newCart = [...beforeCart, newItem]
             localStorage.setItem(storeid, JSON.stringify(newCart))

@@ -18,9 +18,8 @@ function handleCreateStore(owner, storeid, name, logoFile) {
                 console.log('logo url done!')
                 const newStore = {
                     ownerID: owner,
-                    storeName: name,
+                    name: name,
                     logoLink: url,
-                    storeID: storeid,
                 }
                 setDoc(doc(db, 'store collection', storeid),  newStore)
                 .then(()=>{

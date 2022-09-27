@@ -18,9 +18,9 @@ export const handleCreateProduct = (owningStoreid, productName, productPrice, pr
                 console.log('get url done!')
                 const newProduct = {
                 owningStoreid: owningStoreid,
-                productName: productName,
-                productPrice: productPrice,
-                productImageLink: url,
+                name: productName,
+                price: productPrice,
+                thumbnailLink: url,
                 }
                 setDoc(doc(storeProductCol, productName),  newProduct)
                 .then(()=>{resolve('product added done!')})
