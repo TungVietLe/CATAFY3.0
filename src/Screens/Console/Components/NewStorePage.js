@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 //context
 import {UserContext} from '../../../App'
 //hooks
@@ -7,14 +7,13 @@ import {handleCreateStore} from '../../../Hooks/Create/handleCreateStore'
 
 function NewStorePage() {
     //
-    const user = useContext(UserContext)
-    const userid = user?.uid
+    const user = useContext(UserContext); const userid = user?.uid
     const navigateTo = useNavigate()
-    
+    const {wantedStoreid} = useParams()
 
     //
     const [storeName, setStoreName] = useState()
-    const [storeid, setStoreid] = useState()
+    const [storeid, setStoreid] = useState(wantedStoreid)
     const [logo, setLogo] = useState()
     const [banner, setBanner] = useState()
     //Receive Order Method
@@ -28,6 +27,9 @@ function NewStorePage() {
     const validStoreid = storeid && storeid !== '' && !storeid.includes(' ') && !storeid.includes('/')
     const validOveral = validStoreName && validStoreid && logo && banner
 
+    //Store id check
+    const [idCheckDone, setidCheck] = useState(false)
+
 
 
 
@@ -35,6 +37,7 @@ function NewStorePage() {
 
   return (
     <>
+      {idCheckDone? <>Config</> : <>Selectid</>}
         <h2>New Store</h2>
         {validOveral && <p>Heeeee</p>}
 
@@ -46,7 +49,7 @@ function NewStorePage() {
           </label>
           <label>
             Store URL
-          <input placeholder='e.g. mystore123' onChange={(e)=>{setStoreid(e.target.value)}}/>
+          <input placeholder='e.g. mystore123' value={storeid} onChange={(e)=>{setStoreid(e.target.value)}}/>
           </label>
           <label>
             Logo

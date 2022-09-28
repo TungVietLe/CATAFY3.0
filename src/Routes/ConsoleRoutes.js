@@ -23,6 +23,7 @@ function ConsoleRoutes() {
       <Routes>
         <Route index element={<ConsoleIndex/>}/>
         <Route path="new" element={<NewStorePage/>}/>
+        <Route path="new/:wantedStoreid" element={<NewStorePage/>}/>
         <Route path="learn" element={<div>Learn feature soon!</div>}/>
       </Routes>
     </>
