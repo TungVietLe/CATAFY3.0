@@ -1,27 +1,27 @@
-import React, { useContext } from 'react';
-import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { UserContext } from '../../../App';
-import { handleCreateStore } from '../../../Hooks/Create/handleCreateStore';
+import React, { useContext } from 'react'
+import { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { UserContext } from '../../../App'
+import { handleCreateStore } from '../../../Hooks/Create/handleCreateStore'
 
 function NewStoreConfig({ storeid }) {
-	const user = useContext(UserContext);
-	const userid = user?.uid;
-	const navigateTo = useNavigate();
+	const user = useContext(UserContext)
+	const userid = user?.uid
+	const navigateTo = useNavigate()
 
 	//
-	const [storeName, setStoreName] = useState();
-	const [logo, setLogo] = useState();
-	const [banner, setBanner] = useState();
+	const [storeName, setStoreName] = useState()
+	const [logo, setLogo] = useState()
+	const [banner, setBanner] = useState()
 	//Receive Order Method
-	const [acceptPickUp, setPickUp] = useState(false);
-	const [acceptDelivery, setDelivery] = useState(false);
+	const [acceptPickUp, setPickUp] = useState(false)
+	const [acceptDelivery, setDelivery] = useState(false)
 	//Reservation
-	const [requireBooking, setBooking] = useState(false);
+	const [requireBooking, setBooking] = useState(false)
 
 	//Validity
-	const validStoreName = storeName && storeName !== '';
-	const validOveral = validStoreName && logo && banner;
+	const validStoreName = storeName && storeName !== ''
+	const validOveral = validStoreName && logo && banner
 
 	return (
 		<>
@@ -33,7 +33,7 @@ function NewStoreConfig({ storeid }) {
 					Store Name
 					<input
 						onChange={(e) => {
-							setStoreName(e.target.value);
+							setStoreName(e.target.value)
 						}}
 					/>
 				</label>
@@ -43,7 +43,7 @@ function NewStoreConfig({ storeid }) {
 					<input
 						type={'file'}
 						onChange={(e) => {
-							setLogo(e.target.files[0]);
+							setLogo(e.target.files[0])
 						}}
 					/>
 				</label>
@@ -52,7 +52,7 @@ function NewStoreConfig({ storeid }) {
 					<input
 						type={'file'}
 						onChange={(e) => {
-							setBanner(e.target.files[0]);
+							setBanner(e.target.files[0])
 						}}
 					/>
 				</label>
@@ -93,15 +93,24 @@ function NewStoreConfig({ storeid }) {
 				id="createStoreButton"
 				disabled={!validOveral}
 				onClick={() => {
-					handleCreateStore(userid, storeid, storeName, logo).then(() => {
-						navigateTo('/console');
-					});
+					handleCreateStore(
+						userid,
+						storeid,
+						storeName,
+						logo,
+						banner,
+						acceptPickUp,
+						acceptDelivery,
+						requireBooking
+					).then(() => {
+						navigateTo('/console')
+					})
 				}}
 			>
 				Create
 			</button>
 		</>
-	);
+	)
 }
 
-export default NewStoreConfig;
+export default NewStoreConfig
