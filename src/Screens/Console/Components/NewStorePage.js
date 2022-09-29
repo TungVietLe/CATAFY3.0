@@ -1,86 +1,64 @@
-import React, { useContext, useState } from 'react'
-import {useNavigate, useParams} from 'react-router-dom'
-//context
-import {UserContext} from '../../../App'
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 //hooks
-import {handleCreateStore} from '../../../Hooks/Create/handleCreateStore'
+import { handleCheckStoreidAvailability } from '../../../Hooks/Check/handleCheckStoreidAvailability';
+//steps
+import NewStoreConfig from './NewStoreConfig';
 
 function NewStorePage() {
-    //
-    const user = useContext(UserContext); const userid = user?.uid
-    const navigateTo = useNavigate()
-    const {wantedStoreid} = useParams()
+	//
+	const { wantedStoreid } = useParams();
 
-    //
-    const [storeName, setStoreName] = useState()
-    const [storeid, setStoreid] = useState(wantedStoreid)
-    const [logo, setLogo] = useState()
-    const [banner, setBanner] = useState()
-    //Receive Order Method
-    const [acceptPickUp, setPickUp] = useState(false)
-    const [acceptDelivery, setDelivery] = useState(false)
-    //Reservation
-    const [requireBooking, setBooking] = useState(false)
+	//Store id check
+	const [storeid, setStoreid] = useState(wantedStoreid);
+	const [idCheckDone, setidCheck] = useState(false);
+	const validStoreid =
+		storeid &&
+		storeid !== '' &&
+		!storeid.includes(' ') &&
+		!storeid.includes('/');
 
-    //Validity
-    const validStoreName = storeName && storeName !== ''
-    const validStoreid = storeid && storeid !== '' && !storeid.includes(' ') && !storeid.includes('/')
-    const validOveral = validStoreName && validStoreid && logo && banner
+	return (
+		<>
+			<h1>Create New Store</h1>
 
-    //Store id check
-    const [idCheckDone, setidCheck] = useState(false)
+			{idCheckDone ? (
+				<NewStoreConfig storeid={storeid} />
+			) : (
+				<div>
+					<h2>Store URL</h2>
 
+					<div className="storeIDinput">
+						catafy.io/
+						<input
+							defaultValue={wantedStoreid}
+							placeholder="storeid"
+							onChange={(e) => {
+								setStoreid(e.target.value);
+							}}
+						/>
+					</div>
 
-
-
-
-
-  return (
-    <>
-      {idCheckDone? <>Config</> : <>Selectid</>}
-        <h2>New Store</h2>
-        {validOveral && <p>Heeeee</p>}
-
-        {/* _____ INPUTS _____ */}
-        <form>
-          <label>
-            Store Name
-            <input onChange={(e)=>{setStoreName(e.target.value)}}/>
-          </label>
-          <label>
-            Store URL
-          <input placeholder='e.g. mystore123' value={storeid} onChange={(e)=>{setStoreid(e.target.value)}}/>
-          </label>
-          <label>
-            Logo
-            <input type={'file'} onChange={(e)=>{setLogo(e.target.files[0])}}/>
-          </label>
-          <label>
-            Banner
-            <input type={'file'} onChange={(e)=>{setBanner(e.target.files[0])}}/>
-          </label>
-          <label>
-            How Customer Receive Order?
-            <div className={`select ${acceptPickUp}`} onClick={()=>setPickUp(!acceptPickUp)}>At Store</div>
-            <div className={`select ${acceptDelivery}`} onClick={()=>setDelivery(!acceptDelivery)}>Delivery</div>
-          </label>
-          <label>
-            Are Customer Required To Make A Reservation?
-            <div className={`select ${requireBooking}`} onClick={()=>setBooking(true)}>Yes</div>
-            <div className={`select ${!requireBooking}`} onClick={()=>setBooking(false)}>No</div>
-          </label>
-        </form>
-        {/* _____ INPUTS _____ */}
-
-        <button id='createStoreButton' 
-          disabled={!validOveral}
-          onClick={()=>{
-            handleCreateStore(userid, storeid, storeName, logo)
-            .then(()=>{navigateTo('/console')})
-          }}
-        >Create</button>
-    </>
-  )
+					<button
+						className="button Pri"
+						disabled={!validStoreid}
+						onClick={() => {
+							handleCheckStoreidAvailability(storeid).then((status) => {
+								if (status == 'id available') {
+									setidCheck(true);
+								}
+								if (status == 'id taken') {
+									alert('id already been used');
+								}
+							});
+						}}
+					>
+						Continue
+					</button>
+				</div>
+			)}
+		</>
+	);
 }
 
-export default NewStorePage
+export default NewStorePage;
