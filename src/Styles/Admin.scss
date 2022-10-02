@@ -4,7 +4,7 @@ $background-tertiary: #272b30;
 $text-primary: #FFFFFF;
 $text-secondary: #D0D6DC;
 $text-tertiary: #AAB1B8;
-$highlight: #2A86FF;
+$highlight: #5a48ff;
 $purple: #5a48ff;
 $red: #F34A30;
 $blue: #2A86FF;
@@ -15,15 +15,22 @@ $green: #73da82;
     padding-left: 20%;
     .AdminNav {
         position: fixed; top: 0%; bottom: 0%; left: 0%; right: 80%;
-        display: flex; flex-direction: column;
+        display: flex; flex-direction: column; align-items: center;
+        padding-top: 2rem;
         background-color: $background-secondary;
+
+        img {width: 80%; max-width: 7rem; cursor: pointer;}
         a {
             padding: 1rem;
-            color: $text-secondary;
+            color: $text-tertiary; font-weight: 500;
             width: 100%;
+            transition: 0.2s ease;
         }
         a:hover {
             color: $text-primary; background-color: $background-tertiary;
+        }
+        a.active {
+            color: $highlight; background-color: $background-tertiary;
         }
     }
 }
