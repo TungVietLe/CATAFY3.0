@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { UserContext } from '../../../App'
 import { handleCreateStore } from '../../../Hooks/Create/handleCreateStore'
+//screens
+import LoadingScreen from '../../Loading/LoadingScreen'
 
 function NewStoreConfig({ storeid }) {
 	const user = useContext(UserContext)
@@ -10,6 +12,8 @@ function NewStoreConfig({ storeid }) {
 	const navigateTo = useNavigate()
 
 	//
+	const [loadingCreate, setLoadingCreate] = useState(false)
+
 	const [storeName, setStoreName] = useState()
 	const [logo, setLogo] = useState()
 	const [banner, setBanner] = useState()
@@ -26,6 +30,7 @@ function NewStoreConfig({ storeid }) {
 	return (
 		<>
 			<p>Your Store ID: {storeid}</p>
+			{loadingCreate && <LoadingScreen label={'Creating Store'} />}
 
 			{/* _____ INPUTS _____ */}
 			<form>
@@ -93,6 +98,7 @@ function NewStoreConfig({ storeid }) {
 				id="createStoreButton"
 				disabled={!validOveral}
 				onClick={() => {
+					setLoadingCreate(true)
 					handleCreateStore(
 						userid,
 						storeid,
@@ -103,7 +109,7 @@ function NewStoreConfig({ storeid }) {
 						acceptDelivery,
 						requireBooking
 					).then(() => {
-						navigateTo('/console')
+						setLoadingCreate(false)
 					})
 				}}
 			>
