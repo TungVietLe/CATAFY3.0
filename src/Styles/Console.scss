@@ -28,8 +28,7 @@ $green: #73da82;
         padding-left: 2rem;
         width: 50%;
         display: flex; flex-direction: column; justify-content: center;
-        .buttonContainer {margin-top: 1rem;}
-        .Sec {margin-left: 0.5rem;}
+        .buttonContainer {margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;}
       }
     }
 }
