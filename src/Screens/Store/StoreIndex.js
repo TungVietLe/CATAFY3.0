@@ -8,22 +8,10 @@ import { handleReadOneDoc } from '../../Hooks/FetchData/useReadOneDoc'
 import { handleReadCollection } from '../../Hooks/FetchData/useReadEntireCollection'
 import { handleAddItemToLocalCart } from '../../Hooks/localStorage/handleAddToLocalCart'
 
-function StoreIndex({ storeConfig }) {
+function StoreIndex({ storeConfig, storeProducts }) {
 	const navigateTo = useNavigate()
-	//params
-	const { storeidURL } = useParams()
 
-	//
-	useEffect(() => {
-		const storeDoc = doc(db, 'store collection', storeidURL)
-		const productCol = collection(storeDoc, 'products')
-
-		handleReadCollection(productCol).then((res) => {
-			setStoreProducts(res)
-		})
-	}, [])
-
-	const [storeProducts, setStoreProducts] = useState([])
+	//recevie store config and products datas from store routes
 
 	return (
 		<div className="StoreIndex">
@@ -34,7 +22,7 @@ function StoreIndex({ storeConfig }) {
 
 			{/* _____ PRODUCT LIST _____ */}
 			<div className="productList">
-				{storeProducts.map((item) => {
+				{storeProducts?.map((item) => {
 					const itemData = item?.data()
 
 					return (

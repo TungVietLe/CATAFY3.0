@@ -8,10 +8,11 @@ import {
 	useNavigate,
 } from 'react-router-dom'
 import { UserContext } from '../App'
-import { doc } from 'firebase/firestore'
+import { collection, doc } from 'firebase/firestore'
 import { db } from '../firebase/config'
 //hooks
 import { handleReadOneDoc } from '../Hooks/FetchData/useReadOneDoc'
+import { handleReadCollection } from '../Hooks/FetchData/useReadEntireCollection'
 
 //pages
 import StoreIndex from '../Screens/Store/StoreIndex'
@@ -29,13 +30,19 @@ function ConsoleRoutes() {
 	useEffect(() => {
 		console.count('store routes triggered')
 		const storeDoc = doc(db, 'store collection', storeidURL)
+		const productCol = collection(storeDoc, 'products')
+
 		handleReadOneDoc(storeDoc).then((res) => {
 			setStoreConfig(res)
+		})
+		handleReadCollection(productCol).then((res) => {
+			setStoreProducts(res)
 		})
 	}, [])
 
 	//
 	const [storeConfig, setStoreConfig] = useState()
+	const [storeProducts, setStoreProducts] = useState()
 
 	const [cartisOpen, openCart] = useState(false)
 
@@ -64,8 +71,19 @@ function ConsoleRoutes() {
 			{cartisOpen && <Cart openCart={openCart} />}
 
 			<Routes>
-				<Route index element={<StoreIndex storeConfig={storeConfig} />} />
-				<Route path="product/:productidURL" element={<ProductDetailPage />} />
+				<Route
+					index
+					element={
+						<StoreIndex
+							storeConfig={storeConfig}
+							storeProducts={storeProducts}
+						/>
+					}
+				/>
+				<Route
+					path="product/:productidURL"
+					element={<ProductDetailPage storeProducts={storeProducts} />}
+				/>
 				<Route
 					path="checkout"
 					element={user ? <CheckoutPage /> : <LoginPage />}
