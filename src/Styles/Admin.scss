@@ -1,36 +1,37 @@
-$background-primary: #111315;
-$background-secondary: #1a1d1f;
-$background-tertiary: #272b30; 
-$text-primary: #FFFFFF;
-$text-secondary: #D0D6DC;
-$text-tertiary: #AAB1B8;
-$highlight: #5a48ff;
-$purple: #5a48ff;
-$red: #F34A30;
-$blue: #2A86FF;
-$orange: #DEB224;
-$green: #73da82;
-
 .AdminRoutes {
     padding-left: 20%;
     .AdminNav {
         position: fixed; top: 0%; bottom: 0%; left: 0%; right: 80%;
         display: flex; flex-direction: column; align-items: center;
         padding-top: 2rem;
-        background-color: $background-secondary;
+        background-color: var(--background-secondary);
 
         img {width: 80%; max-width: 7rem; cursor: pointer;}
         a {
             padding: 1rem;
-            color: $text-tertiary; font-weight: 500;
+            color: var(--text-tertiary); font-weight: 500;
             width: 100%;
             transition: 0.2s ease;
         }
         a:hover {
-            color: $text-primary; background-color: $background-tertiary;
+            color: var(--text-primary); background-color: var(--background-tertiary);
         }
         a.active {
-            color: $text-primary; background-color: $highlight;
+            color: var(--text-primary); background-color: var(--highlight);
         }
     }
+}
+
+//_____ PRODUCT PAGE _____
+.itemContainer {
+    background-color: var(--background-tertiary);
+    display: flex; align-items: center; gap: 1rem;
+    border-radius: var(--curved); overflow: hidden;
+    margin: 1rem;
+    height: 6rem;
+    cursor: pointer;
+    &:hover {outline: 2px solid var(--orange);}
+
+    img {height: 100%; width: 30%; border-radius: var(--curved);}
+    
 }

@@ -50,14 +50,10 @@ function ProductNew() {
 			{/* _____ INPUTS _____ */}
 
 			<button
+				className="button Pri"
 				onClick={() => {
 					setLoadingAddItem(true)
-					handleCreateProduct(
-						storeidURL,
-						productName,
-						productPrice,
-						productImg
-					).then((mes) => {
+					handleCreateProduct(storeidURL, productName, productPrice, productImg).then((mes) => {
 						setLoadingAddItem(false)
 						console.log(mes)
 					})

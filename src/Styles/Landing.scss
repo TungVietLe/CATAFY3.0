@@ -1,16 +1,3 @@
-$background-primary: #111315;
-$background-secondary: #1a1d1f;
-$background-tertiary: #272b30; 
-$text-primary: #FFFFFF;
-$text-secondary: #D0D6DC;
-$text-tertiary: #AAB1B8;
-$highlight: #5a48ff;
-$purple: #5a48ff;
-$red: #F34A30;
-$blue: #2A86FF;
-$orange: #DEB224;
-$green: #73da82;
-
 
 .heroSection {
     height: 100vh;
@@ -20,12 +7,12 @@ $green: #73da82;
     h1 {width: 35rem; max-width: 100%;}
 }
 .storeIDinput {
-    background-color: $background-secondary;
+    background-color: var(--background-tertiary);
     width: fit-content;
     margin: 0 auto; padding: 0 3rem;
     display: flex; align-items: center;
     font-weight: 500; font-size: 0.9rem;
-    border: 2px $highlight solid; border-radius: 99rem;
+    border: var(--highlight) 2px solid; border-radius: var(--rounded);
 
     input {border: none; background: none;}
 }

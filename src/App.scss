@@ -51,7 +51,7 @@ input{
   background-color: var(--background-secondary); color: var(--text-tertiary);
   display: block;
   padding: 0.7rem 1rem;
-  border-radius: 0.5rem; border: var(--text-tertiary) 2px solid;
+  border-radius: var(--curved); border: var(--text-tertiary) 2px solid;
   transition: ease 0.5s;
 }
 input:focus{
@@ -67,7 +67,7 @@ input:focus{
 
 
 .button {
-  border-radius: 0.4rem; border: solid 2px;
+  border-radius: var(--curved); border: solid 2px;
   font-size: 0.75rem; font-weight: 500; text-transform: uppercase;
   padding: 0.6rem 1.5rem;
   white-space: nowrap;
@@ -117,7 +117,7 @@ form {
     margin-top: 0.3rem;
     font-size: 0.8rem; font-weight: 500;
     padding: 0.5rem 1rem;
-    border-radius: 0.3rem; border: var(--text-tertiary) 2px solid;
+    border-radius: var(--curved); border: var(--text-tertiary) 2px solid;
     transition: ease 0.3s;
   }.true {
     color: var(--green);border: var(--green) 2px solid;

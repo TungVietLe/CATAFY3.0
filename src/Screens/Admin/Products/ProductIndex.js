@@ -24,7 +24,7 @@ function ProductIndex({ myProducts }) {
 							navigateTo(item.id)
 						}}
 					>
-						<img src={itemData.thumbnailLink} width="100" />
+						<img src={itemData.thumbnailLink} />
 						<h3>{itemData.name}</h3>
 					</div>
 				)
