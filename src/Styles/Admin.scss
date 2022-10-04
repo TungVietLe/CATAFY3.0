@@ -30,7 +30,7 @@ $green: #73da82;
             color: $text-primary; background-color: $background-tertiary;
         }
         a.active {
-            color: $highlight; background-color: $background-tertiary;
+            color: $text-primary; background-color: $highlight;
         }
     }
 }
