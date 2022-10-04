@@ -67,10 +67,10 @@ input:focus{
 
 
 .button {
-  border: none; border-radius: 0.4rem;
-  white-space: nowrap;
+  border-radius: 0.4rem; border: solid 2px;
   font-size: 0.75rem; font-weight: 500; text-transform: uppercase;
   padding: 0.6rem 1.5rem;
+  white-space: nowrap;
   transition: ease 0.3s;
   cursor: pointer;
 
@@ -78,18 +78,22 @@ input:focus{
     opacity: 0.7;
   }
   &:disabled {
-    color: var(--text-tertiary);
+    background-color: var(--background-tertiary); color: var(--text-tertiary);
+    border-color: var(--background-tertiary);
+    cursor: not-allowed;
   }
 }
 .Pri {
   background: var(--text-primary); color: var(--background-primary);
+  border-color: var(--text-primary);
 }
 .Sec {
   background: none; color: var(--text-secondary);
-  border: var(--text-secondary) 2px solid;
+  border-color: var(--text-secondary);
 }
 .Highlight {
-  background: var(--highlight); 
+  background: var(--highlight); color: var(--text-primary);
+  border-color: var(--highlight);
 }
 
 
@@ -109,7 +113,7 @@ form {
   .abc {
     color: red;
   }
-  .select {
+  .selectBar {
     margin-top: 0.3rem;
     font-size: 0.8rem; font-weight: 500;
     padding: 0.5rem 1rem;

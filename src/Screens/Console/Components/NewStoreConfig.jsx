@@ -63,31 +63,19 @@ function NewStoreConfig({ storeid }) {
 				</label>
 				<label>
 					How Customer Receive Order?
-					<div
-						className={`select ${acceptPickUp}`}
-						onClick={() => setPickUp(!acceptPickUp)}
-					>
+					<div className={`selectBar ${acceptPickUp}`} onClick={() => setPickUp(!acceptPickUp)}>
 						At Store
 					</div>
-					<div
-						className={`select ${acceptDelivery}`}
-						onClick={() => setDelivery(!acceptDelivery)}
-					>
+					<div className={`selectBar ${acceptDelivery}`} onClick={() => setDelivery(!acceptDelivery)}>
 						Delivery
 					</div>
 				</label>
 				<label>
 					Are Customer Required To Make A Reservation?
-					<div
-						className={`select ${requireBooking}`}
-						onClick={() => setBooking(true)}
-					>
+					<div className={`selectBar ${requireBooking}`} onClick={() => setBooking(true)}>
 						Yes
 					</div>
-					<div
-						className={`select ${!requireBooking}`}
-						onClick={() => setBooking(false)}
-					>
+					<div className={`selectBar ${!requireBooking}`} onClick={() => setBooking(false)}>
 						No
 					</div>
 				</label>
@@ -95,6 +83,7 @@ function NewStoreConfig({ storeid }) {
 			{/* _____ INPUTS _____ */}
 
 			<button
+				className="button "
 				id="createStoreButton"
 				disabled={!validOveral}
 				onClick={() => {
