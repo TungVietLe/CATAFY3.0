@@ -48,19 +48,13 @@ function Cart({ openCart }) {
 				{/* CART ITEMS LIST */}
 				{cart?.map((itemInCart) => {
 					return (
-						<div className="cartItemContainer" key={itemInCart.name}>
-							<img src={itemInCart.thumbnailLink} />
-							<h4>{itemInCart.name}</h4>
+						<div className="cartItemContainer" key={itemInCart.id}>
+							<h4>{itemInCart.id}</h4>
 							<p>quantity: {itemInCart.quantity}</p>
 							<button
 								className="button Pri"
 								onClick={() => {
-									handleAddItemToLocalCart(
-										storeidURL,
-										itemInCart.productName,
-										itemInCart.productPrice,
-										itemInCart.productImageLink
-									).then(() => {
+									handleAddItemToLocalCart(storeidURL, itemInCart.id).then(() => {
 										refreshCart()
 									})
 								}}

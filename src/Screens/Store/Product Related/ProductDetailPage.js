@@ -12,8 +12,8 @@ function ProductDetailPage({ storeProducts }) {
 
 	//
 	// [product] because filter return an ARRAY
-	const [product] = storeProducts?.filter((item) => item.id == productidURL)
-	const allowedAddCart = !product
+	const [product] = storeProducts?.filter((item) => item.id === productidURL)
+	const allowedAddCart = true
 
 	return (
 		<>
@@ -21,17 +21,13 @@ function ProductDetailPage({ storeProducts }) {
 			<p>Params: {productidURL}</p>
 			<img src={product?.data()?.thumbnailLink} width="50%" />
 			<p>{product?.data()?.name}</p>
+			<p>{product?.data()?.price}</p>
 
 			<button
 				className="button Pri"
-				disabled={allowedAddCart}
+				disabled={!allowedAddCart}
 				onClick={() => {
-					handleAddItemToLocalCart(
-						storeidURL,
-						product?.data()?.name,
-						product?.data()?.price,
-						product?.data()?.thumbnailLink
-					)
+					handleAddItemToLocalCart(storeidURL, product.id)
 				}}
 			>
 				ADD TO CART

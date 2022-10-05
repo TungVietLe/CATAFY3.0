@@ -1,12 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import {
-	Routes,
-	Route,
-	Link,
-	NavLink,
-	useParams,
-	useNavigate,
-} from 'react-router-dom'
+import { Routes, Route, Link, NavLink, useParams, useNavigate, Outlet } from 'react-router-dom'
 import { UserContext } from '../App'
 import { collection, doc } from 'firebase/firestore'
 import { db } from '../firebase/config'
@@ -71,23 +64,12 @@ function ConsoleRoutes() {
 			{cartisOpen && <Cart openCart={openCart} />}
 
 			<Routes>
-				<Route
-					index
-					element={
-						<StoreIndex
-							storeConfig={storeConfig}
-							storeProducts={storeProducts}
-						/>
-					}
-				/>
+				<Route index element={<StoreIndex storeConfig={storeConfig} storeProducts={storeProducts} />} />
 				<Route
 					path="product/:productidURL"
-					element={<ProductDetailPage storeProducts={storeProducts} />}
+					element={storeProducts ? <ProductDetailPage storeProducts={storeProducts} /> : <div>Fetching...</div>} //return an <OutLet /> if storeProducts is null
 				/>
-				<Route
-					path="checkout"
-					element={user ? <CheckoutPage /> : <LoginPage />}
-				/>
+				<Route path="checkout" element={user ? <CheckoutPage /> : <LoginPage />} />
 			</Routes>
 		</>
 	)
