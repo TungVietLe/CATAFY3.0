@@ -36,7 +36,10 @@ function ProductRoutes() {
 			<Routes>
 				<Route index element={<ProductIndex myProducts={myProducts} />} />
 				<Route path="new" element={<ProductNew />} />
-				<Route path=":productidURL" element={<ProductEdit myProducts={myProducts} />} />
+				<Route
+					path=":productidURL"
+					element={myProducts ? <ProductEdit myProducts={myProducts} /> : <div>Loading Product...</div>}
+				/>
 			</Routes>
 		</>
 	)
