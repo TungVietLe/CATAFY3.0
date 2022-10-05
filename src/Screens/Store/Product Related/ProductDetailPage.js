@@ -23,6 +23,7 @@ function ProductDetailPage({ storeProducts }) {
 			<p>{product?.data()?.name}</p>
 
 			<button
+				className="button Pri"
 				disabled={allowedAddCart}
 				onClick={() => {
 					handleAddItemToLocalCart(
