@@ -51,7 +51,7 @@ input{
   background-color: var(--background-secondary); color: var(--text-tertiary);
   display: block;
   padding: 0.7rem 1rem;
-  border-radius: var(--curved); border: var(--text-tertiary) 2px solid;
+  border-radius: var(--curved); border: var(--background-tertiary) 2px solid;
   transition: ease 0.5s;
 }
 input:focus{
