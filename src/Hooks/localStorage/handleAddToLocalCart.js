@@ -1,4 +1,4 @@
-export const handleAddItemToLocalCart = (storeid, targetProductID) => {
+export const handleAddItemToLocalCart = (storeid, targetProductID, thumbnailLink) => {
 	return new Promise((resolve, reject) => {
 		let beforeCart = JSON.parse(localStorage.getItem(storeid))
 		if (!beforeCart) {
@@ -17,6 +17,7 @@ export const handleAddItemToLocalCart = (storeid, targetProductID) => {
 			const newItem = {
 				id: targetProductID,
 				quantity: 1,
+				thumbnailLink: thumbnailLink,
 			}
 			const newCart = [...beforeCart, newItem]
 			localStorage.setItem(storeid, JSON.stringify(newCart))

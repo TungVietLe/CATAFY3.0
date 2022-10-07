@@ -27,7 +27,7 @@ function ProductDetailPage({ storeProducts }) {
 				className="button Pri"
 				disabled={!allowedAddCart}
 				onClick={() => {
-					handleAddItemToLocalCart(storeidURL, product.id)
+					handleAddItemToLocalCart(storeidURL, product.id, product?.data()?.thumbnailLink)
 				}}
 			>
 				ADD TO CART

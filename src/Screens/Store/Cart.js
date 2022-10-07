@@ -15,8 +15,8 @@ function Cart({ openCart }) {
 
 	return (
 		<div className="cartBackground">
-			<div className="CartDrawer">
-				<div className="CartHeader">
+			<section className="CartDrawer">
+				<header className="CartHeader">
 					<h2>Your Cart</h2>
 					<button
 						className="button Pri"
@@ -26,7 +26,7 @@ function Cart({ openCart }) {
 					>
 						X
 					</button>
-				</div>
+				</header>
 
 				<button
 					className="button Pri"
@@ -49,6 +49,7 @@ function Cart({ openCart }) {
 				{cart?.map((itemInCart) => {
 					return (
 						<div className="cartItemContainer" key={itemInCart.id}>
+							<img src={itemInCart.thumbnailLink} />
 							<h4>{itemInCart.id}</h4>
 							<p>quantity: {itemInCart.quantity}</p>
 							<button
@@ -67,14 +68,14 @@ function Cart({ openCart }) {
 				{/* CART ITEMS LIST */}
 
 				{cart && (
-					<div className="CartFooter">
+					<footer className="CartFooter">
 						<Link className="button Pri" to={'checkout'} onClick={() => openCart(false)}>
 							Checkout
 						</Link>{' '}
 						{/* only available when cart has item inside */}
-					</div>
+					</footer>
 				)}
-			</div>
+			</section>
 		</div>
 	)
 }
