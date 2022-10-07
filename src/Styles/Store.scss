@@ -21,14 +21,21 @@
         button {margin-top: 2rem;}
     }
 
-    .productList {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10% 3%;
-        grid-auto-flow: row;
-
+    
+    section.allProducts {
         padding: 0 10%;
 
+        #WhatWeOffer {
+            font-size: 1.6rem; font-weight: 500;
+            text-decoration: underline var(--highlight) 5px; text-underline-offset: 0.8rem;
+            margin: 5rem 0; 
+        }
+    }
+    .productGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8% 3%;
+        grid-auto-flow: row;
 
         .productContainer{
             border-radius: var(--curved);
@@ -52,16 +59,19 @@
 
 
 
-.cartBackground {
-    position: fixed; top: 0%; left: 0%; right: 0%; bottom: 0%; z-index: 999;
-    background-color: #111315c1;
+
+//CART
+.cartOutside {
+    background-color: var(--background-primary); opacity: 0.8;
+    position: fixed; top: 0; left: 0%; right: 0%; bottom: 0%;
+    z-index: 998;
 }
 .CartDrawer {
     width: 30%; min-width:330px;
     background-color: var(--background-tertiary);
     overflow-y: scroll;
     padding-top: 20%; padding-bottom: 50%;
-    position: absolute; right: 0%; top: 0%; bottom: 0%;
+    position: fixed; right: 0%; top: 0%; bottom: 0%; z-index: 999;
 
     
     .CartHeader {

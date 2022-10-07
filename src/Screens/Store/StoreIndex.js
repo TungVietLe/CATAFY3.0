@@ -25,25 +25,29 @@ function StoreIndex({ storeConfig, storeProducts }) {
 			</header>
 
 			{/* _____ PRODUCT LIST _____ */}
-			<div className="productList">
-				{storeProducts?.map((item) => {
-					const itemData = item?.data()
+			<section className="allProducts">
+				<div id="WhatWeOffer">What We Offer</div>
 
-					return (
-						<div
-							className="productContainer"
-							key={item.id}
-							onClick={() => {
-								navigateTo(`product/${item.id}`)
-							}}
-						>
-							<img src={itemData.thumbnailLink} />
-							<h3>{itemData.name}</h3>
-							<p>{itemData.price} USD</p>
-						</div>
-					)
-				})}
-			</div>
+				<div className="productGrid">
+					{storeProducts?.map((item) => {
+						const itemData = item?.data()
+
+						return (
+							<div
+								className="productContainer"
+								key={item.id}
+								onClick={() => {
+									navigateTo(`product/${item.id}`)
+								}}
+							>
+								<img src={itemData.thumbnailLink} />
+								<h3>{itemData.name}</h3>
+								<p>{itemData.price} USD</p>
+							</div>
+						)
+					})}
+				</div>
+			</section>
 			{/* _____ PRODUCT LIST _____ */}
 		</div>
 	)

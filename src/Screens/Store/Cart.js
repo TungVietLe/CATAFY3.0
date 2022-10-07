@@ -14,8 +14,15 @@ function Cart({ openCart }) {
 	}
 
 	return (
-		<div className="cartBackground">
-			<section className="CartDrawer">
+		<>
+			<div
+				className="cartOutside"
+				onClick={() => {
+					openCart(false)
+				}}
+			></div>
+
+			<div className="CartDrawer">
 				<header className="CartHeader">
 					<h2>Your Cart</h2>
 					<button
@@ -75,8 +82,8 @@ function Cart({ openCart }) {
 						{/* only available when cart has item inside */}
 					</footer>
 				)}
-			</section>
-		</div>
+			</div>
+		</>
 	)
 }
 
