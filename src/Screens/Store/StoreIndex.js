@@ -15,10 +15,14 @@ function StoreIndex({ storeConfig, storeProducts }) {
 
 	return (
 		<div className="StoreIndex">
-			{/* _____ STORE INFO _____ */}
-			<img className="heroImage" src={storeConfig?.data()?.bannerLink} />
-			<h1>Welcome to {storeConfig?.data()?.name}</h1>
-			{/* _____ STORE INFO _____ */}
+			<header className="Hero">
+				<div className="textContainer">
+					<h1>{storeConfig?.data()?.coreIdea}</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+					<button className="button Highlight">Get Started</button>
+				</div>
+				<img className="heroImage" src={storeConfig?.data()?.bannerLink} />
+			</header>
 
 			{/* _____ PRODUCT LIST _____ */}
 			<div className="productList">
