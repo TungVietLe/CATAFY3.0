@@ -13,25 +13,47 @@ function ProductDetailPage({ storeProducts }) {
 	//
 	// [product] because filter return an ARRAY
 	const [product] = storeProducts?.filter((item) => item.id === productidURL)
+	const otherProduct = storeProducts?.filter((item) => item.id !== productidURL)
 	const allowedAddCart = true
 
 	return (
 		<>
-			<h1>Product Detail</h1>
-			<p>Params: {productidURL}</p>
-			<img src={product?.data()?.thumbnailLink} width="50%" />
-			<p>{product?.data()?.name}</p>
-			<p>{product?.data()?.price}</p>
+			<main className="productDetailContainer">
+				<img src={product?.data()?.thumbnailLink} />
 
-			<button
-				className="button Pri"
-				disabled={!allowedAddCart}
-				onClick={() => {
-					handleAddItemToLocalCart(storeidURL, product.id, product?.data()?.thumbnailLink)
-				}}
-			>
-				ADD TO CART
-			</button>
+				<div className="textContainer">
+					<h1>{product.data()?.name}</h1>
+					<h3>${product?.data()?.price}</h3>
+
+					<button
+						className="button Pri"
+						disabled={!allowedAddCart}
+						onClick={() => {
+							handleAddItemToLocalCart(storeidURL, product.id, product?.data()?.thumbnailLink)
+						}}
+					>
+						ADD TO CART
+					</button>
+				</div>
+			</main>
+
+			{/* OTHER PRODUCTS */}
+			<section className="otherProducts">
+				<h1>Similar Products</h1>
+
+				<div className="productGrid">
+					{/* CAUTION: other objects use this class */}
+					{otherProduct?.map((item) => {
+						return (
+							<div key={item.id} className="productContainer">
+								<img src={item.data().thumbnailLink} />
+								<h3>{item.data().name}</h3>
+								<p>${item.data().price}</p>
+							</div>
+						)
+					})}
+				</div>
+			</section>
 		</>
 	)
 }
