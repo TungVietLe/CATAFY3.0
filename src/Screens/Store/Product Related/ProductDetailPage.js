@@ -36,24 +36,6 @@ function ProductDetailPage({ storeProducts }) {
 					</button>
 				</div>
 			</main>
-
-			{/* OTHER PRODUCTS */}
-			<section className="otherProducts">
-				<h1>Similar Products</h1>
-
-				<div className="productGrid">
-					{/* CAUTION: other objects use this class */}
-					{otherProduct?.map((item) => {
-						return (
-							<div key={item.id} className="productContainer">
-								<img src={item.data().thumbnailLink} />
-								<h3>{item.data().name}</h3>
-								<p>${item.data().price}</p>
-							</div>
-						)
-					})}
-				</div>
-			</section>
 		</>
 	)
 }

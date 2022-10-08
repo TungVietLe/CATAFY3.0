@@ -32,6 +32,7 @@
         }
     }
 }
+//PRODUCT
 .productGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -143,13 +144,5 @@
         padding-left: 2rem;
 
         button {margin-top: 2rem;}
-    }
-}
-section.otherProducts {
-    padding: 0 10%;
-
-    h1 {
-        margin: 4rem 0; 
-        text-decoration: underline var(--highlight) 2px; text-underline-offset: 1rem;
     }
 }
