@@ -136,13 +136,13 @@
     display: flex; justify-content: center;
     padding: 7rem 10%;
 
-    img {width: 50%; height: 50vh;}
+    img {width: 70%; height: 50vh;}
     .textContainer {
-        h1 {font-weight: bold;}
-        h3 {color: var(--text-secondary);}
         width: 50%;
         padding-left: 2rem;
 
+        h1 {font-weight: bold;}
+        h3 {color: var(--text-secondary);}
         button {margin-top: 2rem;}
     }
 }
