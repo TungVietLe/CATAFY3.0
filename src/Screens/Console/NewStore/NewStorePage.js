@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 //hooks
 import { handleCheckStoreidAvailability } from '../../../Hooks/Check/handleCheckStoreidAvailability'
-import MultiPagesForm from '../../../Hooks/MultiPagesForm'
+import MultiPageForm from '../../../Hooks/MultiPageForm'
 //steps
 import NewStoreConfig from './NewStoreConfig'
 import DeliveryAndBooking from './steps/DeliveryAndBooking'
@@ -45,7 +45,7 @@ function NewStorePage() {
 			{idCheckDone ? (
 				<NewStoreConfig storeid={storeid} />
 			) : (
-				<MultiPagesForm
+				<MultiPageForm
 					elements={storeConfigElements}
 					submitFunction={() => {
 						console.log('test')
