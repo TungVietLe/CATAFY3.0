@@ -4,7 +4,7 @@ import CatafyLogo from '../logo.svg'
 
 //screens
 import ConsoleIndex from '../Screens/Console/ConsoleIndex'
-import NewStorePage from '../Screens/Console/Components/NewStorePage'
+import NewStorePage from '../Screens/Console/NewStore/NewStorePage'
 
 function ConsoleRoutes() {
 	const navigateTo = useNavigate()
