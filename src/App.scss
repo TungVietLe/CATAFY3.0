@@ -90,11 +90,13 @@ input:focus{
 }
 .Sec {
   background: none; color: var(--text-secondary);
-  border-color: var(--text-secondary);
 }
 .Highlight {
   background: var(--highlight); color: var(--text-primary);
   border-color: var(--highlight);
+}
+.Warning {
+  background: none; color: var(--red);
 }
 
 

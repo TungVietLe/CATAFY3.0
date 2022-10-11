@@ -1,5 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Routes, Route, Link, useParams, useNavigate, NavLink } from 'react-router-dom'
+import {
+	Routes,
+	Route,
+	Link,
+	useParams,
+	useNavigate,
+	NavLink,
+} from 'react-router-dom'
 import { UserContext } from '../App'
 import logo from '../logo.svg'
 
@@ -11,6 +18,7 @@ import { doc } from 'firebase/firestore'
 import { db } from '../firebase/config'
 //hooks
 import { handleReadOneDoc } from '../Hooks/FetchData/useReadOneDoc'
+import SettingIndex from '../Screens/Admin/Setting/SettingIndex'
 
 function AdminRoutes() {
 	const navigateTo = useNavigate()
@@ -56,7 +64,7 @@ function AdminRoutes() {
 						<Route index element={<div>Admin index</div>} />
 						<Route path="orders/*" element={<OrderRoutes />} />
 						<Route path="products/*" element={<ProductRoutes />} />
-						<Route path="setting" element={<div>setting</div>} />
+						<Route path="setting" element={<SettingIndex />} />
 					</Routes>
 				</div>
 			) : (
