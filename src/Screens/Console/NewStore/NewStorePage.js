@@ -1,13 +1,10 @@
 import React, { useContext, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
 import { UserContext } from '../../../App'
 //hooks
-import { handleCheckStoreidAvailability } from '../../../Hooks/Check/handleCheckStoreidAvailability'
 import { handleCreateStore } from '../../../Hooks/Create/handleCreateStore'
 import MultiPageForm from '../../../Hooks/MultiPageForm'
 import LoadingScreen from '../../Loading/LoadingScreen'
 //steps
-import NewStoreConfig from './NewStoreConfig'
 import DeliveryAndBooking from './steps/DeliveryAndBooking'
 import LogoAndBanner from './steps/LogoAndBanner'
 import Name from './steps/Name'
