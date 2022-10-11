@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 //hooks
 import { handleCheckStoreidAvailability } from '../../../Hooks/Check/handleCheckStoreidAvailability'
 import MultiPageForm from '../../../Hooks/MultiPageForm'
+import LoadingScreen from '../../Loading/LoadingScreen'
 //steps
 import NewStoreConfig from './NewStoreConfig'
 import DeliveryAndBooking from './steps/DeliveryAndBooking'
@@ -37,9 +38,11 @@ function NewStorePage() {
 		<LogoAndBanner newStore={newStore} setStoreConfig={setStoreConfig} />,
 		<DeliveryAndBooking newStore={newStore} setStoreConfig={setStoreConfig} />,
 	]
+	const [isLoading, setLoading] = useState(false)
 
 	return (
 		<>
+			{isLoading && <LoadingScreen label={'Creating Store...'} />}
 			<h1>Create New Store</h1>
 
 			{idCheckDone ? (
@@ -48,7 +51,7 @@ function NewStorePage() {
 				<MultiPageForm
 					elements={storeConfigElements}
 					submitFunction={() => {
-						console.log('test')
+						setLoading(true)
 					}}
 				/>
 				/* <div>
