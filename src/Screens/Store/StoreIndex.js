@@ -17,7 +17,7 @@ function StoreIndex({ storeConfig, storeProducts }) {
 		<div className="StoreIndex">
 			<header className="Hero">
 				<div className="textContainer">
-					<h1>{storeConfig?.data()?.coreIdea}</h1>
+					<h1>{storeConfig?.data()?.slogan}</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
 					<button className="button Highlight">Get Started</button>
 				</div>
