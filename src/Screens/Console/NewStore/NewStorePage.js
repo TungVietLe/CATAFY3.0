@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { UserContext } from '../../../App'
 //hooks
 import { handleCheckStoreidAvailability } from '../../../Hooks/Check/handleCheckStoreidAvailability'
+import { handleCreateStore } from '../../../Hooks/Create/handleCreateStore'
 import MultiPageForm from '../../../Hooks/MultiPageForm'
 import LoadingScreen from '../../Loading/LoadingScreen'
 //steps
@@ -9,21 +11,21 @@ import NewStoreConfig from './NewStoreConfig'
 import DeliveryAndBooking from './steps/DeliveryAndBooking'
 import LogoAndBanner from './steps/LogoAndBanner'
 import Name from './steps/Name'
+import StoreID from './steps/StoreID'
 
 function NewStorePage() {
 	//
-	const { wantedStoreid } = useParams()
+	const user = useContext(UserContext)
 
-	//Store id check
-	const [storeid, setStoreid] = useState(wantedStoreid)
-	const [idCheckDone, setidCheck] = useState(false)
-	const validStoreid =
-		storeid &&
-		storeid !== '' &&
-		!storeid.includes(' ') &&
-		!storeid.includes('/')
+	//loading
+	const [isLoading, setLoading] = useState(false)
 
+	//change when storeid is final ONLY (after available)
+	const [finalStoreid, setFinalStoreid] = useState(null)
+
+	//new store object
 	const [newStore, setStoreConfig] = useState({
+		ownerID: user?.uid,
 		name: '',
 		slogan: '',
 		logoFile: null,
@@ -38,53 +40,24 @@ function NewStorePage() {
 		<LogoAndBanner newStore={newStore} setStoreConfig={setStoreConfig} />,
 		<DeliveryAndBooking newStore={newStore} setStoreConfig={setStoreConfig} />,
 	]
-	const [isLoading, setLoading] = useState(false)
 
 	return (
 		<>
 			{isLoading && <LoadingScreen label={'Creating Store...'} />}
 			<h1>Create New Store</h1>
 
-			{idCheckDone ? (
-				<NewStoreConfig storeid={storeid} />
-			) : (
+			{finalStoreid ? (
 				<MultiPageForm
 					elements={storeConfigElements}
 					submitFunction={() => {
 						setLoading(true)
+						handleCreateStore(finalStoreid, newStore).then(() =>
+							setLoading(false)
+						)
 					}}
 				/>
-				/* <div>
-					<h2>Store URL</h2>
-
-					<div className="storeIDinput">
-						catafy.io/
-						<input
-							defaultValue={wantedStoreid}
-							placeholder="storeid"
-							onChange={(e) => {
-								setStoreid(e.target.value)
-							}}
-						/>
-					</div>
-
-					<button
-						className="button Pri"
-						disabled={!validStoreid}
-						onClick={() => {
-							handleCheckStoreidAvailability(storeid).then((status) => {
-								if (status == 'id available') {
-									setidCheck(true)
-								}
-								if (status == 'id taken') {
-									alert('id already been used')
-								}
-							})
-						}}
-					>
-						Continue
-					</button>
-				</div> */
+			) : (
+				<StoreID setFinalStoreid={setFinalStoreid} />
 			)}
 		</>
 	)

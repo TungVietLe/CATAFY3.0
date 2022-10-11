@@ -20,7 +20,7 @@ function Name({ newStore, setStoreConfig }) {
 				Short phrase to catch customers attention
 				<input
 					value={newStore.slogan}
-					placeholder="Never Give Up"
+					placeholder="Less is More"
 					onChange={(e) => {
 						setStoreConfig({ ...newStore, slogan: e.target.value })
 					}}
