@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../../App'
 //hooks
 import { handleCreateStore } from '../../../Hooks/Create/handleCreateStore'
@@ -13,6 +14,7 @@ import StoreID from './steps/StoreID'
 function NewStorePage() {
 	//
 	const user = useContext(UserContext)
+	const navigateTo = useNavigate()
 
 	//loading
 	const [isLoading, setLoading] = useState(false)
@@ -48,9 +50,10 @@ function NewStorePage() {
 					elements={storeConfigElements}
 					submitFunction={() => {
 						setLoading(true)
-						handleCreateStore(finalStoreid, newStore).then(() =>
+						handleCreateStore(finalStoreid, newStore).then(() => {
 							setLoading(false)
-						)
+							navigateTo('/console')
+						})
 					}}
 				/>
 			) : (
