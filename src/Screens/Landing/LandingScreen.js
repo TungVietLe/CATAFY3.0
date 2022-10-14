@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import ToggleMode from '../Others/ToggleMode'
 
 //components
-import NavBar from './Components/NavBar';
+import NavBar from './Components/NavBar'
 
 function LandingScreen() {
-	const [wantedStoreid, setWantedid] = useState('');
+	const [wantedStoreid, setWantedid] = useState('')
 
 	return (
 		<>
@@ -17,7 +18,7 @@ function LandingScreen() {
 					<input
 						placeholder="storeid"
 						onChange={(e) => {
-							setWantedid(e.target.value);
+							setWantedid(e.target.value)
 						}}
 					/>
 				</div>
@@ -25,8 +26,9 @@ function LandingScreen() {
 					Start My Store
 				</Link>
 			</section>
+			<ToggleMode />
 		</>
-	);
+	)
 }
 
-export default LandingScreen;
+export default LandingScreen
