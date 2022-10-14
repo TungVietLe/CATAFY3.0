@@ -23,3 +23,26 @@
 #createStoreButton {
   position: fixed; bottom: 20%; left: 35%; right: 35%;
 }
+
+
+
+//New Store
+.pickThemeSection {
+  display: flex; gap: 1rem;
+
+  .themeButton {
+    display: flex; align-items: center; justify-content: center;
+    background-color: white;
+    border-radius: 100rem;
+    width: 2rem; height: 2rem;
+    cursor: pointer;
+  }
+  .selected {
+    background-color: var(--text-primary);
+    border-radius: 100rem; 
+    width: 0.8rem; height: 0.8rem;
+  }
+  .notSelected {
+    display: none;
+  }
+}

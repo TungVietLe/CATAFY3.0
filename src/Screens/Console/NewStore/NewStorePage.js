@@ -10,6 +10,7 @@ import DeliveryAndBooking from './steps/DeliveryAndBooking'
 import LogoAndBanner from './steps/LogoAndBanner'
 import Name from './steps/Name'
 import StoreID from './steps/StoreID'
+import Theme from './steps/Theme'
 
 function NewStorePage() {
 	//
@@ -32,9 +33,10 @@ function NewStorePage() {
 		acceptPickup: false,
 		acceptDelivery: false,
 		requireBooking: false,
+		theme: null,
 	})
-
 	const storeConfigElements = [
+		<Theme newStore={newStore} setStoreConfig={setStoreConfig} />,
 		<Name newStore={newStore} setStoreConfig={setStoreConfig} />,
 		<LogoAndBanner newStore={newStore} setStoreConfig={setStoreConfig} />,
 		<DeliveryAndBooking newStore={newStore} setStoreConfig={setStoreConfig} />,
