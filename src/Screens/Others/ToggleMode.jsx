@@ -5,6 +5,7 @@ const lightPalette = {
 	'--background-primary': '#fff',
 	'--background-tertiary': '#ededed',
 	'--text-primary': 'black',
+	'--highlight': 'orange',
 }
 const darkPalette = {
 	'--background-primary': '#111315',
