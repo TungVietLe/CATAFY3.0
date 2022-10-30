@@ -3,9 +3,10 @@ import React from 'react'
 //palette
 const lightPalette = {
 	'--background-primary': '#fff',
-	'--background-tertiary': '#ededed',
+	'--background-secondary': '#F4F7FF',
+	'--background-tertiary': '#EAEEF4',
 	'--text-primary': 'black',
-	'--highlight': 'orange',
+	'--highlight': '#0072E3',
 }
 const darkPalette = {
 	'--background-primary': '#111315',
