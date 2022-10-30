@@ -1,32 +1,52 @@
 import React from 'react'
 
-function ToggleMode() {
+//palette
+const lightPalette = {
+	'--background-primary': '#fff',
+	'--text-primary': 'black',
+}
+const darkPalette = {
+	'--background-primary': '#111315',
+	'--text-primary': '#fff',
+}
+//change css
+const changeCSSVar = (varName, targetValue) => {
+	document.documentElement.style.setProperty(varName, targetValue)
+}
+//apply palette
+const applyPalette = (paletteObj) => {
+	Object.keys(paletteObj).forEach((field) => {
+		changeCSSVar(field, paletteObj[field.toString()])
+	})
+}
+
+function ToggleModeButton() {
 	const handleChangeMode = () => {
-		const currentBg = getComputedStyle(
-			document.documentElement
-		).getPropertyValue('--background-primary')
-		const currentMode = currentBg == '#111315' ? 'dark' : 'light'
+		const currentBg = getComputedStyle(document.documentElement).getPropertyValue(
+			'--background-primary'
+		)
 
-		const target_bg_primary = currentMode == 'dark' ? '#fff' : '#111315'
-		const target_text_primary = currentMode == 'dark' ? '#111315' : '#fff'
-		const target_highlight = currentMode == 'dark' ? '#FF8C32' : '#5a48ff'
+		const currentMode =
+			currentBg.replace(/ /g, '') == darkPalette['--background-primary'] ? 'dark' : 'light'
 
-		//change css
-		const changeCSSVar = (varName, targetValue) => {
-			document.documentElement.style.setProperty(varName, targetValue)
-		}
-		changeCSSVar('--background-primary', target_bg_primary)
-		changeCSSVar('--text-primary', target_text_primary)
-		changeCSSVar('--highlight', target_highlight)
+		//EXECUTE
+		currentMode == 'dark' ? applyPalette(lightPalette) : applyPalette(darkPalette)
 	}
 
 	return (
 		<>
-			<button className="button Pri" onClick={handleChangeMode}>
-				Switch Theme
+			<button
+				style={{
+					padding: '0.3rem 0.6rem',
+					borderRadius: '0.3rem',
+				}}
+				className="button Pri"
+				onClick={handleChangeMode}
+			>
+				☀
 			</button>
 		</>
 	)
 }
 
-export default ToggleMode
+export default ToggleModeButton

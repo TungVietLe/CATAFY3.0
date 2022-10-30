@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import ToggleMode from '../Others/ToggleMode'
+import ToggleModeButton from '../Others/ToggleMode'
 
 //components
 import NavBar from './Components/NavBar'
@@ -26,7 +26,6 @@ function LandingScreen() {
 					Start My Store
 				</Link>
 			</section>
-			<ToggleMode />
 		</>
 	)
 }
