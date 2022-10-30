@@ -3,11 +3,17 @@ import React from 'react'
 //palette
 const lightPalette = {
 	'--background-primary': '#fff',
+	'--background-tertiary': '#ededed',
 	'--text-primary': 'black',
 }
 const darkPalette = {
 	'--background-primary': '#111315',
+	'--background-secondary': '#1a1d1f',
+	'--background-tertiary': '#272b30',
 	'--text-primary': '#fff',
+	'--text-secondary': '#d0d6dc',
+	'--text-tertiary': '#b7babd',
+	'--highlight': '#5a48ff',
 }
 //change css
 const changeCSSVar = (varName, targetValue) => {
