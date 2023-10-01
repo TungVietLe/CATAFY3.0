@@ -1,4 +1,40 @@
 # Simple tool to create online store in less than 3 minutes
+Catafy is a web-based application that allow users to create their own Online Stores in less than 2 minutes. NO CODING experience is required. Catafy provided everything you need to launch a successful e-commerce with a wide range of functionalities. Better, it's FREE!
+
+#Features
+Besides basic story features, There are more additions that we have planned so far.
+Efficient Management: No local storing required.
+Orders Auto Email: Catafy automatically send placed orders' information to customer's email for confirmation and convenience.
+Reminder Auto Email: Catafy automatically send reminders about upcoming order to customers.
+Handle Online Payment: You don't have to spend prolonged period of time setting up payment method. Catafy handles all the heavy lifting.
+Personalization: Configure your store in your own styles - themes, colors, layouts, ...
+Fully internationalized: Easily translated into multiple languages + Can be created and used anywhere in the globe.
+QR code generator: each store will have their own unique QR code so that you can easily share your business with others and attract customers.
+URLs Generator: you will have a free, unique, easy-to-remember link to your store
+URLs Customization: You can choose and change your store URLs to anything you want.
+Multiple Admins: your store can have many administrators just by a click of invitation.
+No Code: Just clicking and Typing.
+Secured Passwordless Authentication: You don't have to remember your complex password. Catafy uses login with a wide range of mediums such as Google, Facebook, Apple, Twitter, GitHub,... you name it.
+Mobile Responsive: Your stores will be functionable in any screen sizes (accept brick phone's of course...) so that both customer and admins can access them anywhere, anytime.
+Various Type of Online Payment <Upcoming>: In addition to Strive payment, Catafy will support many kinds of payments such as Visa, Master Cart, Paypal,...
+Auto Analytics: View analytics about your store's products, customers, performances... in various mediums (forms, graphs, texts...)
+
+
+#Overview
+SAVE TIME. SAVE EFFORT. ALL-IN-ONE SOLUTION.
+Initial Problems: It's always take so much time and very complicated to set up an online store of your own. Even with no code development tools such as Webflow, Shopify, Wix, or WordPress, opening a store is still a pain with lots of steps and complication since they are not specialized in E-commerce but focus on a wider range of static pages only. That's why more than 200.000.000 businesses are not online yet despite the popularity of the Internet.
+Solution: A tool that help users create there online e-commerce in just a few clicks. Your store can be up running right away in less than 2 minutes.
+Target Users: Small Businesses, Start-ups, Young Entrepreneur, Content Creators, Influencers
+Role: Designer & Developer
+Responsibility:
+Designed the application’s user interface and user experience.•
+Collaborated with other team members to manage the project’s workflow. •
+Prepared and delivered presentations for investors.•
+Took part in front-end and back-end development of the application. •
+Conducted research on visual identification and brand strategy. •
+Produced necessary graphics and animations.
+Current Scopes & Constrains: budget & funding, legal, team
+Future Goals: seed-funding, MVP, launch, series-A funding
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
