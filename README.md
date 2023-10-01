@@ -4,8 +4,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 
-![62cab873e691b2821c6f4ad6_12 edited](https://github.com/TungVietLe/CATAFY3.0/assets/99946449/6ace1754-23ad-4adb-a941-4fc1dba74354)
-
 
 
 ## Available Scripts
