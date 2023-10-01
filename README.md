@@ -2,8 +2,8 @@
 Catafy is a web-based application that allow users to create their own Online Stores in less than 2 minutes. NO CODING experience is required. Catafy provided everything you need to launch a successful e-commerce with a wide range of functionalities. Better, it's FREE!
 
 #Features
-Besides basic story features, There are more additions that we have planned so far.
-Efficient Management: No local storing required.
+Besides basic story features, There are more additions that we have planned so far.__
+Efficient Management: No local storing required.__
 Orders Auto Email: Catafy automatically send placed orders' information to customer's email for confirmation and convenience.
 Reminder Auto Email: Catafy automatically send reminders about upcoming order to customers.
 Handle Online Payment: You don't have to spend prolonged period of time setting up payment method. Catafy handles all the heavy lifting.
