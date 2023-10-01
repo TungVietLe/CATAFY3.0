@@ -1,9 +1,9 @@
 # Simple tool to create online store in less than 3 minutes
 Catafy is a web-based application that allow users to create their own Online Stores in less than 2 minutes. NO CODING experience is required. Catafy provided everything you need to launch a successful e-commerce with a wide range of functionalities. Better, it's FREE!
 
-#Features
-Besides basic story features, There are more additions that we have planned so far.__
-Efficient Management: No local storing required.__
+# Features
+Besides basic story features, There are more additions that we have planned so far.\
+Efficient Management: No local storing required.__\
 Orders Auto Email: Catafy automatically send placed orders' information to customer's email for confirmation and convenience.
 Reminder Auto Email: Catafy automatically send reminders about upcoming order to customers.
 Handle Online Payment: You don't have to spend prolonged period of time setting up payment method. Catafy handles all the heavy lifting.
@@ -20,7 +20,7 @@ Various Type of Online Payment <Upcoming>: In addition to Strive payment, Catafy
 Auto Analytics: View analytics about your store's products, customers, performances... in various mediums (forms, graphs, texts...)
 
 
-#Overview
+# Overview
 SAVE TIME. SAVE EFFORT. ALL-IN-ONE SOLUTION.
 Initial Problems: It's always take so much time and very complicated to set up an online store of your own. Even with no code development tools such as Webflow, Shopify, Wix, or WordPress, opening a store is still a pain with lots of steps and complication since they are not specialized in E-commerce but focus on a wider range of static pages only. That's why more than 200.000.000 businesses are not online yet despite the popularity of the Internet.
 Solution: A tool that help users create there online e-commerce in just a few clicks. Your store can be up running right away in less than 2 minutes.
