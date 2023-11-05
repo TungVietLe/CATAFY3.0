@@ -1,3 +1,4 @@
+### [This project is no longer in active development]
 # Simple tool to create online store in less than 3 minutes
 Catafy is a web-based application that allow users to create their own Online Stores in less than 2 minutes. NO CODING experience is required. Catafy provided everything you need to launch a successful e-commerce with a wide range of functionalities. Better, it's FREE!
 
