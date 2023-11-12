@@ -47,6 +47,7 @@ function Cart({ openCart }) {
 					className="button Pri"
 					onClick={() => {
 						localStorage.removeItem(storeidURL)
+						refreshCart()
 					}}
 				>
 					Clear
