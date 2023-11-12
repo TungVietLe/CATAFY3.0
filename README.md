@@ -4,7 +4,8 @@ Catafy is a web-based application that allow users to create their own Online St
 
 
 ![logo v2_square logo](https://github.com/TungVietLe/CATAFY3.0/assets/99946449/44dcbc64-5b85-41d1-bccb-8f88fcead164)
-
+# Screenshots:
+https://viettung.webflow.io/project-details/catafy
 
 # Features
 Besides basic story features, There are more additions that we have planned so far.\
