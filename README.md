@@ -2,6 +2,11 @@
 # Simple tool to create online store in less than 3 minutes
 Catafy is a web-based application that allow users to create their own Online Stores in less than 2 minutes. NO CODING experience is required. Catafy provided everything you need to launch a successful e-commerce with a wide range of functionalities. Better, it's FREE!
 
+# Try it out:
+- [Catafy](https://tungvietle.github.io/CATAFYv3/)
+- [example store](https://tungvietle.github.io/CATAFYv3/#/hacker)
+- store owner view (try to create a store yourself - 3 minutes only)
+
 
 ![logo v2_square logo](https://github.com/TungVietLe/CATAFY3.0/assets/99946449/44dcbc64-5b85-41d1-bccb-8f88fcead164)
 # Screenshots:
