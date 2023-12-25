@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/CATAFY3.0/static/css/main.bb055cc2.css",
-    "main.js": "/CATAFY3.0/static/js/main.72bfae10.js",
-    "static/js/787.6cc76243.chunk.js": "/CATAFY3.0/static/js/787.6cc76243.chunk.js",
-    "static/media/logo.svg": "/CATAFY3.0/static/media/logo.920ec3a553232d784e81585a24705fc7.svg",
-    "index.html": "/CATAFY3.0/index.html",
-    "main.bb055cc2.css.map": "/CATAFY3.0/static/css/main.bb055cc2.css.map",
-    "main.72bfae10.js.map": "/CATAFY3.0/static/js/main.72bfae10.js.map",
-    "787.6cc76243.chunk.js.map": "/CATAFY3.0/static/js/787.6cc76243.chunk.js.map"
+    "main.css": "/CATAFYv3/static/css/main.bb055cc2.css",
+    "main.js": "/CATAFYv3/static/js/main.81f87668.js",
+    "static/js/787.6cc76243.chunk.js": "/CATAFYv3/static/js/787.6cc76243.chunk.js",
+    "static/media/logo.svg": "/CATAFYv3/static/media/logo.920ec3a553232d784e81585a24705fc7.svg",
+    "index.html": "/CATAFYv3/index.html",
+    "main.bb055cc2.css.map": "/CATAFYv3/static/css/main.bb055cc2.css.map",
+    "main.81f87668.js.map": "/CATAFYv3/static/js/main.81f87668.js.map",
+    "787.6cc76243.chunk.js.map": "/CATAFYv3/static/js/787.6cc76243.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bb055cc2.css",
-    "static/js/main.72bfae10.js"
+    "static/js/main.81f87668.js"
   ]
 }
